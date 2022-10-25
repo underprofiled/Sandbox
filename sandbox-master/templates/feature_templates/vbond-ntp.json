@@ -1,0 +1,147 @@
+{
+  "deviceType": [
+    "vedge-cloud"
+  ],
+  "templateType": "ntp",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "admin",
+  "editedTemplateDefinition": {
+    "keys": {
+      "trusted": {
+        "vipObjectType": "list",
+        "vipType": "ignore",
+        "vipVariableName": "trusted_key"
+      }
+    },
+    "server": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "name": {
+            "vipObjectType": "object",
+            "vipType": "variableName",
+            "vipValue": "",
+            "vipVariableName": "ntp_server_host"
+          },
+          "key": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_server_auth_key"
+          },
+          "vpn": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 0,
+            "vipVariableName": "ntp_server_vpn"
+          },
+          "version": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 4,
+            "vipVariableName": "ntp_server_version"
+          },
+          "source-interface": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_source_interface"
+          },
+          "prefer": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "true",
+            "vipVariableName": "ntp_server_prefer"
+          },
+          "vipOptional": false,
+          "priority-order": [
+            "name",
+            "key",
+            "vpn",
+            "version",
+            "source-interface",
+            "prefer"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "name"
+      ]
+    }
+  },
+  "gTemplateClass": "vedge",
+  "templateDefinition": {
+    "keys": {
+      "trusted": {
+        "vipObjectType": "list",
+        "vipType": "ignore",
+        "vipVariableName": "trusted_key"
+      }
+    },
+    "server": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "name": {
+            "vipObjectType": "object",
+            "vipType": "variableName",
+            "vipValue": "",
+            "vipVariableName": "ntp_server_host"
+          },
+          "key": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_server_auth_key"
+          },
+          "vpn": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 0,
+            "vipVariableName": "ntp_server_vpn"
+          },
+          "version": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 4,
+            "vipVariableName": "ntp_server_version"
+          },
+          "source-interface": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_source_interface"
+          },
+          "prefer": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "true",
+            "vipVariableName": "ntp_server_prefer"
+          },
+          "vipOptional": false,
+          "priority-order": [
+            "name",
+            "key",
+            "vpn",
+            "version",
+            "source-interface",
+            "prefer"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "name"
+      ]
+    }
+  },
+  "templateId": "55cfb511-1ab3-4d29-b05d-16cc99ddb3cb",
+  "configType": "xml",
+  "attachedMastersCount": 1,
+  "createdOn": 1605917949621,
+  "@rid": 353,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "admin",
+  "templateName": "vbond-ntp",
+  "devicesAttached": 1,
+  "templateDescription": "vbond-ntp",
+  "lastUpdatedOn": 1605917949621
+}
