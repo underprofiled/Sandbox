@@ -1,0 +1,64 @@
+{
+  "templateName": "vBond",
+  "templateDescription": "vBond",
+  "deviceType": "vedge-cloud",
+  "configType": "template",
+  "factoryDefault": false,
+  "policyId": "",
+  "featureTemplateUidRange": [],
+  "generalTemplates": [
+    {
+      "templateId": "2a1cceb6-1b66-4a8a-9ad0-c5e23709743e",
+      "templateType": "aaa"
+    },
+    {
+      "templateId": "8db6d67e-1c0b-40f0-bc1a-91ae59070449",
+      "templateType": "bfd-vedge"
+    },
+    {
+      "templateId": "f43445f6-8f00-4e81-967e-2a685d3ecfa4",
+      "templateType": "omp-vedge"
+    },
+    {
+      "templateId": "d54510b9-4e96-47de-9f8f-e0a598609d61",
+      "templateType": "security-vedge"
+    },
+    {
+      "templateId": "b283c937-2333-4dea-b977-b35678ce49d3",
+      "templateType": "system-vedge",
+      "subTemplates": [
+        {
+          "templateId": "7d96cb5c-fd67-42f3-8214-1b138fc44c1f",
+          "templateType": "logging"
+        },
+        {
+          "templateId": "55cfb511-1ab3-4d29-b05d-16cc99ddb3cb",
+          "templateType": "ntp"
+        }
+      ]
+    },
+    {
+      "templateId": "450f18c9-54c4-434c-a40f-301078fd26da",
+      "templateType": "vpn-vedge",
+      "subTemplates": [
+        {
+          "templateId": "22890962-d23c-470e-b664-c10fa8087d99",
+          "templateType": "vpn-vedge-interface"
+        }
+      ]
+    },
+    {
+      "templateId": "34c788f9-e897-4c68-b773-ec1807caf395",
+      "templateType": "vpn-vedge",
+      "subTemplates": [
+        {
+          "templateId": "853a566d-51ce-4870-973c-f60c8294bc20",
+          "templateType": "vpn-vedge-interface"
+        }
+      ]
+    }
+  ],
+  "templateId": "5af2fc80-3ed9-459d-bc5f-f24ccf04ac53",
+  "templateClass": "vedge",
+  "deviceRole": "sdwan-edge"
+}

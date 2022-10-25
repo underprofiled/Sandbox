@@ -1,0 +1,64 @@
+{
+  "templateName": "Default_Azure_vWAN_C8000V_Template_V01",
+  "templateDescription": "Default device template for Azure vWAN C8000V",
+  "deviceType": "vedge-C8000V",
+  "configType": "template",
+  "factoryDefault": true,
+  "policyId": "",
+  "featureTemplateUidRange": [],
+  "connectionPreference": true,
+  "connectionPreferenceRequired": true,
+  "generalTemplates": [
+    {
+      "templateId": "f8eb4f46-5a0f-4fe5-9eb5-af1241595b0a",
+      "templateType": "cedge_aaa"
+    },
+    {
+      "templateId": "7f166a3f-e011-4031-bbc4-afaf0e101d0d",
+      "templateType": "cisco_bfd"
+    },
+    {
+      "templateId": "99e61026-00a0-4e51-9b09-1b16f963e9c6",
+      "templateType": "cisco_omp"
+    },
+    {
+      "templateId": "5c270815-bc17-4afe-b177-39e24fb3f3ef",
+      "templateType": "cisco_security"
+    },
+    {
+      "templateId": "f9618504-af93-4abb-b443-79ed305c32f1",
+      "templateType": "cisco_system",
+      "subTemplates": [
+        {
+          "templateId": "0057a1be-5c67-4ea2-b833-4b9d4069272e",
+          "templateType": "cisco_logging"
+        }
+      ]
+    },
+    {
+      "templateId": "482bef50-16e5-445e-ba1f-75e5fecd7424",
+      "templateType": "cisco_vpn",
+      "subTemplates": [
+        {
+          "templateId": "4d1a8b08-f8c0-4a7f-9e79-714c4ffa4cc9",
+          "templateType": "cisco_vpn_interface"
+        },
+        {
+          "templateId": "7c55d6fc-7074-4d33-9110-2610129dbfc6",
+          "templateType": "cisco_vpn_interface"
+        }
+      ]
+    },
+    {
+      "templateId": "18eb3bab-f75c-4449-afbb-d429cb746e50",
+      "templateType": "cisco_vpn"
+    },
+    {
+      "templateId": "e8329e8a-89d9-4662-a501-2cadc65df981",
+      "templateType": "cedge_global"
+    }
+  ],
+  "templateClass": "cedge",
+  "templateId": "e17c2664-a37b-46f4-83ee-012454613059",
+  "deviceRole": "sdwan-edge"
+}

@@ -1,0 +1,82 @@
+{
+  "templateId": "04cc12b3-43f4-4f05-9d56-296ab4804583",
+  "templateName": "MIA2",
+  "templateDescription": "MIami Edge 2",
+  "deviceType": "vedge-C1111X-8P",
+  "deviceRole": "sdwan-edge",
+  "configType": "template",
+  "factoryDefault": false,
+  "policyId": "",
+  "featureTemplateUidRange": [],
+  "connectionPreferenceRequired": true,
+  "connectionPreference": true,
+  "generalTemplates": [
+    {
+      "templateId": "3a90acfb-c450-4f6e-8733-5393567cce75",
+      "templateType": "cedge_aaa"
+    },
+    {
+      "templateId": "ab76dee0-6345-434a-9b85-9a70e243adee",
+      "templateType": "cisco_bfd"
+    },
+    {
+      "templateId": "a3902939-167a-4ae3-b241-2703e8aab097",
+      "templateType": "cisco_omp"
+    },
+    {
+      "templateId": "f8053e9d-ef80-47e1-990d-691b38b88f20",
+      "templateType": "cisco_security"
+    },
+    {
+      "templateId": "76fde1dd-623e-487d-ae8d-c9ebe62e0891",
+      "templateType": "cisco_system",
+      "subTemplates": [
+        {
+          "templateId": "56fde440-cd4b-4091-84dc-f369f8fefc4c",
+          "templateType": "cisco_logging"
+        }
+      ]
+    },
+    {
+      "templateId": "a26ee7be-622a-4338-94ee-0f1e30069b17",
+      "templateType": "cisco_vpn",
+      "subTemplates": [
+        {
+          "templateId": "a2f5a9bd-dcd3-4cc2-99d1-ae9c4eea0219",
+          "templateType": "cisco_vpn_interface"
+        },
+        {
+          "templateId": "da864896-cf52-4eeb-abb4-75eabaa44ade",
+          "templateType": "cisco_vpn_interface"
+        },
+        {
+          "templateId": "9f94b2fd-e53f-45df-8b7f-fffb189d8ecb",
+          "templateType": "cisco_vpn_interface"
+        }
+      ]
+    },
+    {
+      "templateId": "30d5e7db-5e0b-4a50-98ae-4478c2a18183",
+      "templateType": "cisco_vpn"
+    },
+    {
+      "templateId": "2189e11b-9ca0-48f8-9656-be4121a91b75",
+      "templateType": "cisco_vpn",
+      "subTemplates": [
+        {
+          "templateId": "658af3ce-09ad-4ae2-b7f9-ca2af147570e",
+          "templateType": "vpn-interface-svi"
+        }
+      ]
+    },
+    {
+      "templateId": "e8329e8a-89d9-4662-a501-2cadc65df981",
+      "templateType": "cedge_global"
+    },
+    {
+      "templateId": "39df5f38-27e3-41cd-8efb-3380f0df5e73",
+      "templateType": "switchport"
+    }
+  ],
+  "templateClass": "cedge"
+}

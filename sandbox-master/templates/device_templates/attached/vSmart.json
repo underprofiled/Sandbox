@@ -1,0 +1,14 @@
+[
+  {
+    "host-name": "vSmart-Pod8",
+    "deviceIP": "100.64.255.140",
+    "local-system-ip": "100.64.255.140",
+    "site-id": "1",
+    "device-groups": [
+      "No groups"
+    ],
+    "uuid": "20d584f2-12ed-40e7-a7d2-9e2bcbfa96fc",
+    "personality": "vsmart",
+    "configCloudxMode": "none"
+  }
+]
