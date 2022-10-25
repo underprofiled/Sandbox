@@ -1,0 +1,123 @@
+Last Update: 02/04/2021 13:30 pastryer
+
+README: The following document is a list of commands to backup and restore vManage templates
+
+PLEASE make sure you are on the correct pod with the correct commands for your pod.
+
+BACKING UP (exporting) Directions
+  * Find your pod # below
+  * Open PowerShell, by right clicking the icon on the JumpHost desktop and selecting Run As Administrator.
+  * Copy and past the backup all command for your pod into PowerShell and press Enter.
+  * A folder will be created in the C:\Users\user\data directory automatically.
+  * The new folder format will be C:\Users\user\data\backup_vManage-IP_yearmonthday. 
+      (example - c:\Users\user\data\backup_100.64.1.111_20200728)
+  * Copy (save) your new folder and it's contents to your favorite cloud storage for safe keeping.  
+
+RESTORING (importing) Directions
+  * Find your pod # below
+  * Copy your saved vManage template export from your cloud storage into C:\Users\user\data folder. 
+  * Open PowerShell, by right clicking the icon on the JumpHost desktop and selecting Run As Administrator.
+  * Copy and past the first restore command (feature) into your PowerShell
+      * Change FOLDERNAME to the name of your backup's folder name, and press Enter.
+  * Copy and past the second restore command (device) into your powerShell and press Enter.
+      * Change FOLDERNAME to the name of your backup's folder name, and press Enter.
+	
+_____________________________________________
+
+SD-WAN SandBox 01
+cd C:\Users\user
+sdwan -a 100.64.1.111 -u support -p C1sco12345 --verbose backup all
+
+sdwan -a 100.64.1.111 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_feature
+
+sdwan -a 100.64.1.111 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_device
+
+-----------------------------------------------
+
+SD-WAN SandBox 02
+cd C:\Users\user
+sdwan -a 100.64.1.115 -u support -p C1sco12345 --verbose backup all
+
+sdwan -a 100.64.1.115 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_feature
+
+sdwan -a 100.64.1.115 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_device
+
+-----------------------------------------------
+
+SD-WAN SandBox 03
+cd C:\Users\user
+sdwan -a 100.64.1.119 -u support -p C1sco12345 --verbose backup all
+
+sdwan -a 100.64.1.119 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_feature
+
+sdwan -a 100.64.1.119 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_device
+
+-----------------------------------------------
+
+SD-WAN SandBox 04
+cd C:\Users\user
+sdwan -a 100.64.1.123 -u support -p C1sco12345 --verbose backup all
+
+sdwan -a 100.64.1.123 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_feature
+
+sdwan -a 100.64.1.123 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_device
+
+-----------------------------------------------
+
+SD-WAN SandBox 05
+cd C:\Users\user
+sdwan -a 100.64.1.127 -u support -p C1sco12345 --verbose backup all
+
+sdwan -a 100.64.1.127 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_feature
+
+sdwan -a 100.64.1.127 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_device
+
+-----------------------------------------------
+
+SD-WAN SandBox 06
+cd C:\Users\user
+sdwan -a 100.64.1.131 -u support -p C1sco12345 --verbose backup all
+
+sdwan -a 100.64.1.131 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_feature
+
+sdwan -a 100.64.1.131 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_device
+
+-----------------------------------------------
+
+SD-WAN SandBox 07
+cd C:\Users\user
+sdwan -a 100.64.1.135 -u support -p C1sco12345 --verbose backup all
+
+sdwan -a 100.64.1.135 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_feature
+
+sdwan -a 100.64.1.135 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_device
+
+-----------------------------------------------
+
+SD-WAN SandBox 08
+cd C:\Users\user
+sdwan -a 100.64.1.139 -u support -p C1sco12345 --verbose backup all
+
+sdwan -a 100.64.1.139 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_feature
+
+sdwan -a 100.64.1.139 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_device
+
+-----------------------------------------------
+
+SD-WAN SandBox 09
+cd C:\Users\user
+sdwan -a 100.64.1.143 -u support -p C1sco12345 --verbose backup all
+
+sdwan -a 100.64.1.143 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_feature
+
+sdwan -a 100.64.1.143 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_device
+
+-----------------------------------------------
+
+SD-WAN SandBox 10
+cd C:\Users\user
+sdwan -a 100.64.1.147 -u support -p C1sco12345 --verbose backup all
+
+sdwan -a 100.64.1.147 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_feature
+
+sdwan -a 100.64.1.147 -u support -p C1sco12345 --verbose restore --workdir C:\Users\user\data\FOLDERNAME  template_device
