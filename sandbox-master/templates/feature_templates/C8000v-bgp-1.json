@@ -1,0 +1,691 @@
+{
+  "templateMinVersion": "15.0.0",
+  "deviceType": [
+    "vedge-C8000V"
+  ],
+  "templateType": "cisco_bgp",
+  "lastUpdatedBy": "admin",
+  "editedTemplateDefinition": {
+    "bgp": {
+      "as-num": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": "64513",
+        "vipVariableName": "bgp_as_num"
+      },
+      "shutdown": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "bgp_shutdown"
+      },
+      "router-id": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": "100.64.255.3",
+        "vipVariableName": "bgp_router_id"
+      },
+      "propagate-aspath": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "propagate_aspath"
+      },
+      "distance": {
+        "external": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": 20,
+          "vipVariableName": "routes-distance_external"
+        },
+        "internal": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": 200,
+          "vipVariableName": "routes-distance_internal"
+        },
+        "local": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": 20,
+          "vipVariableName": "routes-distance_local"
+        }
+      },
+      "timers": {
+        "keepalive": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": 60,
+          "vipVariableName": "bgp_keepalive"
+        },
+        "holdtime": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": 180,
+          "vipVariableName": "bgp_holdtime"
+        }
+      },
+      "best-path": {
+        "compare-router-id": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": "false",
+          "vipVariableName": "bgp_compare_router_id"
+        },
+        "med": {
+          "always-compare": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "false",
+            "vipVariableName": "bgp_always_compare"
+          },
+          "deterministic": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "false",
+            "vipVariableName": "bgp_deterministic"
+          },
+          "missing-as-worst": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "false",
+            "vipVariableName": "bgp_missing_as_worst"
+          }
+        },
+        "as-path": {
+          "multipath-relax": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "false",
+            "vipVariableName": "bgp_multipath_relax"
+          }
+        }
+      },
+      "propagate-community": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "propagate_community"
+      },
+      "target": {
+        "route-target-ipv4": {
+          "vipObjectType": "tree",
+          "vipType": "ignore",
+          "vipValue": [],
+          "vipPrimaryKey": [
+            "vpn-id"
+          ]
+        },
+        "route-target-ipv6": {
+          "vipObjectType": "tree",
+          "vipType": "ignore",
+          "vipValue": [],
+          "vipPrimaryKey": [
+            "vpn-id"
+          ]
+        }
+      },
+      "mpls-interface": {
+        "vipObjectType": "tree",
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipPrimaryKey": [
+          "if-name"
+        ]
+      },
+      "address-family": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "maximum-paths": {
+              "paths": {
+                "vipObjectType": "object",
+                "vipType": "ignore",
+                "vipValue": "",
+                "vipVariableName": "bgp_maximum_paths"
+              }
+            },
+            "family-type": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "ipv4-unicast"
+            },
+            "aggregate-address": {
+              "vipType": "ignore",
+              "vipValue": [],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "prefix"
+              ]
+            },
+            "network": {
+              "vipType": "ignore",
+              "vipValue": [],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "prefix"
+              ]
+            },
+            "redistribute": {
+              "vipType": "constant",
+              "vipValue": [
+                {
+                  "protocol": {
+                    "vipObjectType": "object",
+                    "vipType": "constant",
+                    "vipValue": "omp",
+                    "vipVariableName": "bgp_redistribute_protocol"
+                  },
+                  "route-policy": {
+                    "vipObjectType": "object",
+                    "vipType": "ignore",
+                    "vipVariableName": "bgp_redistribute_route_policy"
+                  },
+                  "priority-order": [
+                    "protocol",
+                    "route-policy"
+                  ]
+                }
+              ],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "protocol"
+              ]
+            },
+            "table-map": {
+              "name": {
+                "vipObjectType": "object",
+                "vipType": "ignore",
+                "vipValue": "",
+                "vipVariableName": "bgp_ipv4-name"
+              },
+              "filter": {
+                "vipObjectType": "node-only",
+                "vipType": "ignore",
+                "vipValue": "false",
+                "vipVariableName": "bgp_ipv4-filter"
+              }
+            },
+            "priority-order": [
+              "family-type",
+              "aggregate-address",
+              "network",
+              "maximum-paths",
+              "redistribute",
+              "table-map"
+            ]
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "family-type"
+        ]
+      },
+      "neighbor": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "address": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "10.2.100.100",
+              "vipVariableName": "bgp_neighbor_address"
+            },
+            "description": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "Datacenter Switch",
+              "vipVariableName": "bgp_neighbor_description"
+            },
+            "shutdown": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": "false",
+              "vipVariableName": "bgp_neighbor_neighbor_shutdown"
+            },
+            "remote-as": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "65000",
+              "vipVariableName": "bgp_neighbor_remote_as"
+            },
+            "timers": {
+              "keepalive": {
+                "vipObjectType": "object",
+                "vipType": "ignore",
+                "vipValue": "",
+                "vipVariableName": "bgp_neighbor_keepalive_ngbr"
+              },
+              "holdtime": {
+                "vipObjectType": "object",
+                "vipType": "ignore",
+                "vipValue": "",
+                "vipVariableName": "bgp_neighbor_holdtime_ngbr"
+              }
+            },
+            "update-source": {
+              "if-name": {
+                "vipObjectType": "object",
+                "vipType": "ignore",
+                "vipValue": "",
+                "vipVariableName": "bgp_neighbor_if_name"
+              }
+            },
+            "next-hop-self": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": "false",
+              "vipVariableName": "bgp_neighbor_next_hop_self"
+            },
+            "send-community": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": "true",
+              "vipVariableName": "bgp_neighbor_send_community"
+            },
+            "send-ext-community": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": "true",
+              "vipVariableName": "bgp_neighbor_send_ext_community"
+            },
+            "ebgp-multihop": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": 1,
+              "vipVariableName": "bgp_neighbor_ebgp_multihop"
+            },
+            "password": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": "",
+              "vipVariableName": "bgp_neighbor_password"
+            },
+            "address-family": {
+              "vipType": "ignore",
+              "vipValue": [],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "family-type"
+              ]
+            },
+            "priority-order": [
+              "address",
+              "description",
+              "shutdown",
+              "remote-as",
+              "timers",
+              "update-source",
+              "next-hop-self",
+              "send-community",
+              "send-ext-community",
+              "ebgp-multihop",
+              "password",
+              "address-family"
+            ]
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      },
+      "ipv6-neighbor": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      }
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "bgp": {
+      "as-num": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": "64513",
+        "vipVariableName": "bgp_as_num"
+      },
+      "shutdown": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "bgp_shutdown"
+      },
+      "router-id": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": "100.64.255.3",
+        "vipVariableName": "bgp_router_id"
+      },
+      "propagate-aspath": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "propagate_aspath"
+      },
+      "distance": {
+        "external": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": 20,
+          "vipVariableName": "routes-distance_external"
+        },
+        "internal": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": 200,
+          "vipVariableName": "routes-distance_internal"
+        },
+        "local": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": 20,
+          "vipVariableName": "routes-distance_local"
+        }
+      },
+      "timers": {
+        "keepalive": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": 60,
+          "vipVariableName": "bgp_keepalive"
+        },
+        "holdtime": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": 180,
+          "vipVariableName": "bgp_holdtime"
+        }
+      },
+      "best-path": {
+        "compare-router-id": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": "false",
+          "vipVariableName": "bgp_compare_router_id"
+        },
+        "med": {
+          "always-compare": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "false",
+            "vipVariableName": "bgp_always_compare"
+          },
+          "deterministic": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "false",
+            "vipVariableName": "bgp_deterministic"
+          },
+          "missing-as-worst": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "false",
+            "vipVariableName": "bgp_missing_as_worst"
+          }
+        },
+        "as-path": {
+          "multipath-relax": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "false",
+            "vipVariableName": "bgp_multipath_relax"
+          }
+        }
+      },
+      "propagate-community": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "propagate_community"
+      },
+      "target": {
+        "route-target-ipv4": {
+          "vipObjectType": "tree",
+          "vipType": "ignore",
+          "vipValue": [],
+          "vipPrimaryKey": [
+            "vpn-id"
+          ]
+        },
+        "route-target-ipv6": {
+          "vipObjectType": "tree",
+          "vipType": "ignore",
+          "vipValue": [],
+          "vipPrimaryKey": [
+            "vpn-id"
+          ]
+        }
+      },
+      "mpls-interface": {
+        "vipObjectType": "tree",
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipPrimaryKey": [
+          "if-name"
+        ]
+      },
+      "address-family": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "maximum-paths": {
+              "paths": {
+                "vipObjectType": "object",
+                "vipType": "ignore",
+                "vipValue": "",
+                "vipVariableName": "bgp_maximum_paths"
+              }
+            },
+            "family-type": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "ipv4-unicast"
+            },
+            "aggregate-address": {
+              "vipType": "ignore",
+              "vipValue": [],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "prefix"
+              ]
+            },
+            "network": {
+              "vipType": "ignore",
+              "vipValue": [],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "prefix"
+              ]
+            },
+            "redistribute": {
+              "vipType": "constant",
+              "vipValue": [
+                {
+                  "protocol": {
+                    "vipObjectType": "object",
+                    "vipType": "constant",
+                    "vipValue": "omp",
+                    "vipVariableName": "bgp_redistribute_protocol"
+                  },
+                  "route-policy": {
+                    "vipObjectType": "object",
+                    "vipType": "ignore",
+                    "vipVariableName": "bgp_redistribute_route_policy"
+                  },
+                  "priority-order": [
+                    "protocol",
+                    "route-policy"
+                  ]
+                }
+              ],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "protocol"
+              ]
+            },
+            "table-map": {
+              "name": {
+                "vipObjectType": "object",
+                "vipType": "ignore",
+                "vipValue": "",
+                "vipVariableName": "bgp_ipv4-name"
+              },
+              "filter": {
+                "vipObjectType": "node-only",
+                "vipType": "ignore",
+                "vipValue": "false",
+                "vipVariableName": "bgp_ipv4-filter"
+              }
+            },
+            "priority-order": [
+              "family-type",
+              "aggregate-address",
+              "network",
+              "maximum-paths",
+              "redistribute",
+              "table-map"
+            ]
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "family-type"
+        ]
+      },
+      "neighbor": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "address": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "10.2.100.100",
+              "vipVariableName": "bgp_neighbor_address"
+            },
+            "description": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "Datacenter Switch",
+              "vipVariableName": "bgp_neighbor_description"
+            },
+            "shutdown": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": "false",
+              "vipVariableName": "bgp_neighbor_neighbor_shutdown"
+            },
+            "remote-as": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "65000",
+              "vipVariableName": "bgp_neighbor_remote_as"
+            },
+            "timers": {
+              "keepalive": {
+                "vipObjectType": "object",
+                "vipType": "ignore",
+                "vipValue": "",
+                "vipVariableName": "bgp_neighbor_keepalive_ngbr"
+              },
+              "holdtime": {
+                "vipObjectType": "object",
+                "vipType": "ignore",
+                "vipValue": "",
+                "vipVariableName": "bgp_neighbor_holdtime_ngbr"
+              }
+            },
+            "update-source": {
+              "if-name": {
+                "vipObjectType": "object",
+                "vipType": "ignore",
+                "vipValue": "",
+                "vipVariableName": "bgp_neighbor_if_name"
+              }
+            },
+            "next-hop-self": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": "false",
+              "vipVariableName": "bgp_neighbor_next_hop_self"
+            },
+            "send-community": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": "true",
+              "vipVariableName": "bgp_neighbor_send_community"
+            },
+            "send-ext-community": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": "true",
+              "vipVariableName": "bgp_neighbor_send_ext_community"
+            },
+            "ebgp-multihop": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": 1,
+              "vipVariableName": "bgp_neighbor_ebgp_multihop"
+            },
+            "password": {
+              "vipObjectType": "object",
+              "vipType": "ignore",
+              "vipValue": "",
+              "vipVariableName": "bgp_neighbor_password"
+            },
+            "address-family": {
+              "vipType": "ignore",
+              "vipValue": [],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "family-type"
+              ]
+            },
+            "priority-order": [
+              "address",
+              "description",
+              "shutdown",
+              "remote-as",
+              "timers",
+              "update-source",
+              "next-hop-self",
+              "send-community",
+              "send-ext-community",
+              "ebgp-multihop",
+              "password",
+              "address-family"
+            ]
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      },
+      "ipv6-neighbor": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      }
+    }
+  },
+  "templateId": "248ace2b-389a-4103-88a3-ae0519684851",
+  "configType": "xml",
+  "attachedMastersCount": 1,
+  "createdOn": 1624905143146,
+  "@rid": 237,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "templateName": "C8000v-bgp-1",
+  "createdBy": "admin",
+  "devicesAttached": 0,
+  "templateDescription": "C8000v-bgp-1",
+  "lastUpdatedOn": 1624905143146
+}
