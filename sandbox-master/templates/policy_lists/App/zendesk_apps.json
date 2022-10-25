@@ -1,0 +1,19 @@
+{
+  "listId": "00e981b6-f2d4-4ae4-a2e7-383360432c5e",
+  "name": "zendesk_apps",
+  "type": "app",
+  "description": "SaaS App List for Zendesk",
+  "entries": [
+    {
+      "app": "zendesk"
+    }
+  ],
+  "lastUpdated": 1605914011135,
+  "owner": "system",
+  "readOnly": true,
+  "version": "2.0",
+  "infoTag": "",
+  "referenceCount": 0,
+  "references": [],
+  "isActivatedByVsmart": false
+}

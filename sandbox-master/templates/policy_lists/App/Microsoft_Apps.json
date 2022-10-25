@@ -1,0 +1,88 @@
+{
+  "listId": "ed8c118d-510d-480c-b0e6-6f3241e9c02c",
+  "name": "Microsoft_Apps",
+  "type": "app",
+  "description": "Microsoft Applications List",
+  "entries": [
+    {
+      "app": "bing"
+    },
+    {
+      "app": "hockeyapp"
+    },
+    {
+      "app": "live_hotmail"
+    },
+    {
+      "app": "lync"
+    },
+    {
+      "app": "lync_online"
+    },
+    {
+      "app": "ms-services"
+    },
+    {
+      "app": "ms_translator"
+    },
+    {
+      "app": "ms-office-365"
+    },
+    {
+      "app": "share-point"
+    },
+    {
+      "app": "skydrive"
+    },
+    {
+      "app": "skype"
+    },
+    {
+      "app": "windows_azure"
+    },
+    {
+      "app": "windows_update"
+    },
+    {
+      "app": "windows_marketplace"
+    },
+    {
+      "app": "windowslive"
+    },
+    {
+      "app": "windowslivespace"
+    },
+    {
+      "app": "windowsmedia"
+    },
+    {
+      "app": "xbox"
+    },
+    {
+      "app": "xbox_music"
+    },
+    {
+      "app": "xbox_video"
+    },
+    {
+      "app": "xboxlive"
+    },
+    {
+      "app": "xboxlive_marketplace"
+    },
+    {
+      "app": "word_online"
+    },
+    {
+      "app": "powerpoint_online"
+    }
+  ],
+  "lastUpdated": 1605914010070,
+  "owner": "system",
+  "readOnly": true,
+  "version": "4.0",
+  "infoTag": "",
+  "referenceCount": 0,
+  "references": [],
+  "isActivatedByVsmart": false
+}

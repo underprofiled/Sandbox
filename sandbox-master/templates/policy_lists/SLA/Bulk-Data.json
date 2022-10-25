@@ -1,0 +1,21 @@
+{
+  "listId": "a669ced6-c458-4454-af1e-e18cea29cad1",
+  "name": "Bulk-Data",
+  "type": "sla",
+  "description": "ACI Bulk Data SLA",
+  "entries": [
+    {
+      "jitter": "100",
+      "latency": "300",
+      "loss": "10"
+    }
+  ],
+  "lastUpdated": 1605914010645,
+  "owner": "system",
+  "readOnly": false,
+  "version": "1.0",
+  "infoTag": "aci",
+  "referenceCount": 0,
+  "references": [],
+  "isActivatedByVsmart": false
+}
