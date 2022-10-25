@@ -1,0 +1,96 @@
+no config 
+config
+  system
+   personality           vmanage
+   device-model          vmanage
+   chassis-number        561d0b81-f609-47fa-ad04-5488db539216
+   host-name             vManage-Pod8
+   system-ip             100.64.255.139
+   site-id               1
+   admin-tech-on-failure
+   no vrrp-advt-with-phymac
+   sp-organization-name  SSL_SD-WAN_PoV_POD8
+   organization-name     SSL_SD-WAN_PoV_POD8
+   clock timezone America/New_York
+   vbond 64.102.247.137
+   aaa
+    auth-order local radius tacacs
+    usergroup basic
+     task system read write
+     task interface read write
+    !
+    usergroup netadmin
+    !
+    usergroup operator
+     task system read
+     task interface read
+     task policy read
+     task routing read
+     task security read
+    !
+    usergroup tenantadmin
+    !
+    user admin
+     password $6$x5M32QPXiN/WqgbZ$BCSJpiRmdwlnPCbFUxawZbg2QVdG0Lr9O8s6QPpBcfVu2rEUU8QcJdJwjitUN3lbUXNUi5KYKl8QecAS0dQ041
+    !
+    user netadmin
+     password    $6$Kj0n37h8kfoR/1V0$SdPL0i1ckRvDDTuM.v1s3f1BGg5ThW.P0igEA5aMOWMYwysnmZYHDVUxxwxI/Zb9t1ljvSR7/BwHgPGMKW8oL/
+     description netadmin
+     group       netadmin
+    !
+    user support
+     password    $6$zE/YmfCbaLDKEpFH$5KBROb.p5h1jFPG7QxU7TGxIWcmzUEC1cR0JJY6KiEcmtKpqfrVAMR.hmV9sG8XIxhi8cPBhw9K6cRIFBZ4G0/
+     description support
+     group       netadmin
+    !
+   !
+   logging
+    disk
+     enable
+    !
+   !
+   ntp
+    parent
+     no enable
+     stratum 5
+    exit
+    server 100.64.1.1
+     source-interface ""
+     vpn              0
+     version          4
+     prefer
+    exit
+   !
+  !
+  vpn 0
+   dns 208.67.220.220 secondary
+   dns 208.67.222.222 primary
+   interface eth0
+    ip address 64.102.247.139/25
+    ipv6 dhcp-client
+    tunnel-interface
+     color public-internet
+     hello-tolerance 12
+     allow-service all
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     allow-service sshd
+     allow-service netconf
+     allow-service ntp
+     allow-service stun
+     allow-service https
+    !
+    no shutdown
+   !
+   ip route 0.0.0.0/0 64.102.247.129
+  !
+  vpn 512
+   interface eth1
+    ip address 100.64.254.139/24
+    no shutdown
+   !
+   ip route 0.0.0.0/0 100.64.254.1
+  !
+ !
+!

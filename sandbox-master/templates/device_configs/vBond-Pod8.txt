@@ -1,0 +1,108 @@
+no config 
+config
+viptela-system:system 
+personality vedge
+device-model vedge-cloud
+vbond 64.102.247.137 port 12346
+chassis-number cb09102f-432d-4237-a6cc-82181fef6db5
+ztp-status success
+config-template-name "vBond"
+pseudo-confirm-commit 300
+!
+  system
+   personality             vedge
+   device-model            vedge-cloud
+   host-name               vBond-Pod8
+   system-ip               100.64.255.141
+   domain-id               1
+   site-id                 1
+   admin-tech-on-failure
+   no route-consistency-check
+   no vrrp-advt-with-phymac
+   sp-organization-name    SSL_SD-WAN_PoV_POD8
+   organization-name       SSL_SD-WAN_PoV_POD8
+   clock timezone America/New_York
+   console-baud-rate       9600
+   vbond 64.102.247.137 local port 12346
+   aaa
+    auth-order local radius tacacs
+    usergroup basic
+     task system read write
+     task interface read write
+    !
+    usergroup netadmin
+    !
+    usergroup operator
+     task system read
+     task interface read
+     task policy read
+     task routing read
+     task security read
+    !
+    user admin
+     password $6$b/AIDA==$qbHwZ57iDrTtsil3l6O.Zssj.9T4MtiSRa/cw5N4ZoH9sZT88or/Zl2mxxgWMtHxMuR858MhuY3k.R7AKiXay/
+    !
+    user netadmin
+     password $6$K3l2mw==$PbpOHEbnHZcbOQdYncEKsR70G64sEb6sD2pMjqvoxBlJVcAvKw92erdCPNRP0MrQUbb9UVeTh4oxV4bs8fjun1
+     group    netadmin
+    !
+   !
+   logging
+    disk
+     enable
+    !
+   !
+   ntp
+    parent
+     no enable
+     stratum 5
+    exit
+    server 100.64.1.1
+     version 4
+     prefer
+    exit
+   !
+  !
+  omp
+   no shutdown
+   graceful-restart
+   advertise connected
+   advertise static
+  !
+  security
+   ipsec
+    authentication-type sha1-hmac ah-sha1-hmac
+   !
+  !
+  vpn 0
+   dns 208.67.222.222 primary
+   interface ge0/0
+    ip address 64.102.247.137/25
+    tunnel-interface
+     encapsulation ipsec
+     color public-internet
+     allow-service all
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service stun
+     allow-service https
+    !
+    no shutdown
+   !
+   ip route 0.0.0.0/0 64.102.247.129
+  !
+  vpn 512
+   dns 208.67.222.222 primary
+   interface eth0
+    ip address 100.64.254.141/24
+    no shutdown
+   !
+  !
+ !
+!
