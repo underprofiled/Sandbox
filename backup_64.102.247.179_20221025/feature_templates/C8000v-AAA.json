@@ -1,0 +1,343 @@
+{
+  "deviceType": [
+    "vedge-C8000V"
+  ],
+  "templateType": "cedge_aaa",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "user": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "vipOptional": false,
+          "name": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "admin",
+            "vipVariableName": "user_name_0"
+          },
+          "password": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "$6$sWTJ4A==$5YBZjdXXE6eVWaykUQxpAYBJSF0FRTIOVAdPJBOw1BCDPPqEp3Uj2iuB9PhNQqA2ImLjdwUh9MnkWxqX/Gb3F1",
+            "vipVariableName": "user_password1"
+          },
+          "secret": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "$9$1l2E2/.D3VAJ2k$rZgt0UdW9qbQMbYjeDN6sJztzznbMXSySxPKWeGgAQk",
+            "vipVariableName": "password_secret1"
+          },
+          "pubkey-chain": {
+            "vipObjectType": "tree",
+            "vipType": "ignore",
+            "vipValue": [],
+            "vipVariableName": "user_pubkey_chain_0",
+            "vipPrimaryKey": [
+              "key-string"
+            ]
+          },
+          "privilege": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "15",
+            "vipVariableName": "user_privilege_0"
+          },
+          "priority-order": [
+            "name",
+            "password",
+            "secret",
+            "pubkey-chain",
+            "privilege"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "name"
+      ]
+    },
+    "tacacs": {
+      "vipType": "ignore",
+      "vipValue": []
+    },
+    "radius": {
+      "vipType": "ignore",
+      "vipValue": []
+    },
+    "authentication": {
+      "dot1x": {
+        "default": {
+          "authentication_group": {
+            "key": "authentication_group",
+            "description": "Authentication Param",
+            "details": "Authentication configurations parameters",
+            "optionType": [
+              {
+                "value": "constant",
+                "display": "Global",
+                "iconClass": "language",
+                "iconColor": "icon-global"
+              },
+              {
+                "value": "variable",
+                "display": "Device Specific",
+                "iconClass": "router",
+                "iconColor": "icon-variable"
+              },
+              {
+                "value": "ignore",
+                "display": "Default",
+                "iconClass": "check_circle",
+                "iconColor": "icon-default"
+              }
+            ],
+            "originalDefaultOption": "ignore",
+            "defaultOption": "ignore",
+            "dataType": {
+              "type": "boolean",
+              "default": "false"
+            },
+            "dataPath": [
+              "default"
+            ],
+            "vipObjectType": "object",
+            "objectType": "object",
+            "deleteFlag": false,
+            "vipValue": "false",
+            "vipType": "ignore",
+            "vipVariableName": "dot1x_auth_group"
+          }
+        }
+      }
+    },
+    "accounting": {
+      "dot1x": {
+        "default": {
+          "start-stop": {
+            "accounting_group": {
+              "key": "accounting_group",
+              "description": "Accounting Param",
+              "details": "Accounting configurations parameters",
+              "optionType": [
+                {
+                  "value": "constant",
+                  "display": "Global",
+                  "iconClass": "language",
+                  "iconColor": "icon-global"
+                },
+                {
+                  "value": "variable",
+                  "display": "Device Specific",
+                  "iconClass": "router",
+                  "iconColor": "icon-variable"
+                },
+                {
+                  "value": "ignore",
+                  "display": "Default",
+                  "iconClass": "check_circle",
+                  "iconColor": "icon-default"
+                }
+              ],
+              "originalDefaultOption": "ignore",
+              "defaultOption": "ignore",
+              "dataType": {
+                "type": "boolean",
+                "default": "false"
+              },
+              "dataPath": [
+                "start-stop"
+              ],
+              "vipObjectType": "object",
+              "objectType": "object",
+              "deleteFlag": false,
+              "vipValue": "false",
+              "vipType": "ignore",
+              "vipVariableName": "dot1x_acct_group"
+            }
+          }
+        }
+      }
+    },
+    "server-auth-order": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "local"
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "user": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "vipOptional": false,
+          "name": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "admin",
+            "vipVariableName": "user_name_0"
+          },
+          "password": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "$6$sWTJ4A==$5YBZjdXXE6eVWaykUQxpAYBJSF0FRTIOVAdPJBOw1BCDPPqEp3Uj2iuB9PhNQqA2ImLjdwUh9MnkWxqX/Gb3F1",
+            "vipVariableName": "user_password1"
+          },
+          "secret": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "$9$1l2E2/.D3VAJ2k$rZgt0UdW9qbQMbYjeDN6sJztzznbMXSySxPKWeGgAQk",
+            "vipVariableName": "password_secret1"
+          },
+          "pubkey-chain": {
+            "vipObjectType": "tree",
+            "vipType": "ignore",
+            "vipValue": [],
+            "vipVariableName": "user_pubkey_chain_0",
+            "vipPrimaryKey": [
+              "key-string"
+            ]
+          },
+          "privilege": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "15",
+            "vipVariableName": "user_privilege_0"
+          },
+          "priority-order": [
+            "name",
+            "password",
+            "secret",
+            "pubkey-chain",
+            "privilege"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "name"
+      ]
+    },
+    "tacacs": {
+      "vipType": "ignore",
+      "vipValue": []
+    },
+    "radius": {
+      "vipType": "ignore",
+      "vipValue": []
+    },
+    "authentication": {
+      "dot1x": {
+        "default": {
+          "authentication_group": {
+            "key": "authentication_group",
+            "description": "Authentication Param",
+            "details": "Authentication configurations parameters",
+            "optionType": [
+              {
+                "value": "constant",
+                "display": "Global",
+                "iconClass": "language",
+                "iconColor": "icon-global"
+              },
+              {
+                "value": "variable",
+                "display": "Device Specific",
+                "iconClass": "router",
+                "iconColor": "icon-variable"
+              },
+              {
+                "value": "ignore",
+                "display": "Default",
+                "iconClass": "check_circle",
+                "iconColor": "icon-default"
+              }
+            ],
+            "originalDefaultOption": "ignore",
+            "defaultOption": "ignore",
+            "dataType": {
+              "type": "boolean",
+              "default": "false"
+            },
+            "dataPath": [
+              "default"
+            ],
+            "vipObjectType": "object",
+            "objectType": "object",
+            "deleteFlag": false,
+            "vipValue": "false",
+            "vipType": "ignore",
+            "vipVariableName": "dot1x_auth_group"
+          }
+        }
+      }
+    },
+    "accounting": {
+      "dot1x": {
+        "default": {
+          "start-stop": {
+            "accounting_group": {
+              "key": "accounting_group",
+              "description": "Accounting Param",
+              "details": "Accounting configurations parameters",
+              "optionType": [
+                {
+                  "value": "constant",
+                  "display": "Global",
+                  "iconClass": "language",
+                  "iconColor": "icon-global"
+                },
+                {
+                  "value": "variable",
+                  "display": "Device Specific",
+                  "iconClass": "router",
+                  "iconColor": "icon-variable"
+                },
+                {
+                  "value": "ignore",
+                  "display": "Default",
+                  "iconClass": "check_circle",
+                  "iconColor": "icon-default"
+                }
+              ],
+              "originalDefaultOption": "ignore",
+              "defaultOption": "ignore",
+              "dataType": {
+                "type": "boolean",
+                "default": "false"
+              },
+              "dataPath": [
+                "start-stop"
+              ],
+              "vipObjectType": "object",
+              "objectType": "object",
+              "deleteFlag": false,
+              "vipValue": "false",
+              "vipType": "ignore",
+              "vipVariableName": "dot1x_acct_group"
+            }
+          }
+        }
+      }
+    },
+    "server-auth-order": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "local"
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 2,
+  "templateId": "d5b6fda6-a9e1-4d01-ad36-727feee5b2bc",
+  "createdOn": 1666715226838,
+  "@rid": 1582,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "C8000v-AAA",
+  "devicesAttached": 0,
+  "templateDescription": "C8000v AAA Template",
+  "lastUpdatedOn": 1666715226838
+}

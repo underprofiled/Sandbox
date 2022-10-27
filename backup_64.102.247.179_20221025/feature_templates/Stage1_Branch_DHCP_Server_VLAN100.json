@@ -1,0 +1,152 @@
+{
+  "deviceType": [
+    "vedge-ISR-4331",
+    "vedge-C1111X-8P"
+  ],
+  "templateType": "cisco_dhcp_server",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "address-pool": {
+      "vipObjectType": "object",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "VLAN100_DHCP_Pool_Subnet_slash_Mask"
+    },
+    "exclude": {
+      "vipObjectType": "list",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "VLAN100_DHCP_Exclude_Addresses_StartIP-EndIP"
+    },
+    "lease-time": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 86400,
+      "vipVariableName": "lease_time"
+    },
+    "options": {
+      "interface-mtu": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "dhcp_interface_mtu"
+      },
+      "domain-name": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "dhcp_domain_name"
+      },
+      "default-gateway": {
+        "vipObjectType": "object",
+        "vipType": "variableName",
+        "vipValue": "",
+        "vipVariableName": "VLAN100_DHCP_Default_Gateway"
+      },
+      "dns-servers": {
+        "vipObjectType": "list",
+        "vipType": "variableName",
+        "vipValue": "",
+        "vipVariableName": "VLAN100_DNS_Server_IP"
+      },
+      "tftp-servers": {
+        "vipObjectType": "list",
+        "vipType": "ignore",
+        "vipVariableName": "tftp-server"
+      },
+      "option-code": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "code"
+        ]
+      }
+    },
+    "static-lease": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "mac-address"
+      ]
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "address-pool": {
+      "vipObjectType": "object",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "VLAN100_DHCP_Pool_Subnet_slash_Mask"
+    },
+    "exclude": {
+      "vipObjectType": "list",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "VLAN100_DHCP_Exclude_Addresses_StartIP-EndIP"
+    },
+    "lease-time": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 86400,
+      "vipVariableName": "lease_time"
+    },
+    "options": {
+      "interface-mtu": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "dhcp_interface_mtu"
+      },
+      "domain-name": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "dhcp_domain_name"
+      },
+      "default-gateway": {
+        "vipObjectType": "object",
+        "vipType": "variableName",
+        "vipValue": "",
+        "vipVariableName": "VLAN100_DHCP_Default_Gateway"
+      },
+      "dns-servers": {
+        "vipObjectType": "list",
+        "vipType": "variableName",
+        "vipValue": "",
+        "vipVariableName": "VLAN100_DNS_Server_IP"
+      },
+      "tftp-servers": {
+        "vipObjectType": "list",
+        "vipType": "ignore",
+        "vipVariableName": "tftp-server"
+      },
+      "option-code": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "code"
+        ]
+      }
+    },
+    "static-lease": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "mac-address"
+      ]
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 5,
+  "templateId": "801bf562-68b4-4fef-b013-a1c1b5ceb308",
+  "createdOn": 1666716798419,
+  "@rid": 1600,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "Stage1_Branch_DHCP_Server_VLAN100",
+  "devicesAttached": 0,
+  "templateDescription": "DHCP Server Settings for VLAN 100",
+  "lastUpdatedOn": 1666716798419
+}

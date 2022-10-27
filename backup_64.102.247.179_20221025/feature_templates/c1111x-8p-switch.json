@@ -1,0 +1,419 @@
+{
+  "deviceType": [
+    "vedge-C1111X-8P"
+  ],
+  "templateType": "switchport",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "slot": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": 0
+    },
+    "module": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "8"
+    },
+    "age-time": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 300,
+      "vipVariableName": "switchport_'age_time'"
+    },
+    "subslot": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": 1
+    },
+    "interface": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "if-name": {
+            "vipObjectType": "object",
+            "vipType": "variableName",
+            "vipValue": "",
+            "vipVariableName": "g0_1_0"
+          },
+          "switchport": {
+            "access": {
+              "vlan": {
+                "vlan": {
+                  "vipObjectType": "object",
+                  "vipType": "variableName",
+                  "vipValue": "",
+                  "vipVariableName": "switchport-g0_1_0-vlan-id"
+                }
+              }
+            },
+            "mode": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "access"
+            }
+          },
+          "shutdown": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "false",
+            "vipVariableName": "switchport_if_shutdown"
+          },
+          "speed": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_speed"
+          },
+          "duplex": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_duplex"
+          },
+          "dot1x": {
+            "vipType": "ignore",
+            "vipObjectType": "node-only"
+          },
+          "priority-order": [
+            "if-name",
+            "shutdown",
+            "switchport",
+            "speed",
+            "duplex",
+            "dot1x"
+          ],
+          "vipOptional": true
+        },
+        {
+          "if-name": {
+            "vipObjectType": "object",
+            "vipType": "variableName",
+            "vipValue": "",
+            "vipVariableName": "g0_1_1"
+          },
+          "switchport": {
+            "access": {
+              "vlan": {
+                "vlan": {
+                  "vipObjectType": "object",
+                  "vipType": "variableName",
+                  "vipValue": "",
+                  "vipVariableName": "switchport_g0_1_1-vlan-id"
+                }
+              }
+            },
+            "mode": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "access"
+            }
+          },
+          "shutdown": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "false",
+            "vipVariableName": "switchport_if_shutdown"
+          },
+          "speed": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_speed"
+          },
+          "duplex": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_duplex"
+          },
+          "dot1x": {
+            "vipType": "ignore",
+            "vipObjectType": "node-only"
+          },
+          "vipOptional": true,
+          "priority-order": [
+            "if-name",
+            "shutdown",
+            "switchport",
+            "speed",
+            "duplex",
+            "dot1x"
+          ]
+        },
+        {
+          "if-name": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "GigabitEthernet0/1/3",
+            "vipVariableName": "switchport_if_if_name"
+          },
+          "switchport": {
+            "access": {
+              "vlan": {
+                "vlan": {
+                  "vipObjectType": "object",
+                  "vipType": "ignore",
+                  "vipValue": "",
+                  "vipVariableName": "switchport_if_access_vlan_vlan"
+                }
+              }
+            },
+            "mode": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "access"
+            }
+          },
+          "shutdown": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "true",
+            "vipVariableName": "switchport_if_shutdown"
+          },
+          "speed": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_speed"
+          },
+          "duplex": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_duplex"
+          },
+          "dot1x": {
+            "vipType": "ignore",
+            "vipObjectType": "node-only"
+          },
+          "priority-order": [
+            "if-name",
+            "shutdown",
+            "switchport",
+            "speed",
+            "duplex",
+            "dot1x"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "if-name"
+      ]
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "slot": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": 0
+    },
+    "module": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "8"
+    },
+    "age-time": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 300,
+      "vipVariableName": "switchport_'age_time'"
+    },
+    "subslot": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": 1
+    },
+    "interface": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "if-name": {
+            "vipObjectType": "object",
+            "vipType": "variableName",
+            "vipValue": "",
+            "vipVariableName": "g0_1_0"
+          },
+          "switchport": {
+            "access": {
+              "vlan": {
+                "vlan": {
+                  "vipObjectType": "object",
+                  "vipType": "variableName",
+                  "vipValue": "",
+                  "vipVariableName": "switchport-g0_1_0-vlan-id"
+                }
+              }
+            },
+            "mode": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "access"
+            }
+          },
+          "shutdown": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "false",
+            "vipVariableName": "switchport_if_shutdown"
+          },
+          "speed": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_speed"
+          },
+          "duplex": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_duplex"
+          },
+          "dot1x": {
+            "vipType": "ignore",
+            "vipObjectType": "node-only"
+          },
+          "priority-order": [
+            "if-name",
+            "shutdown",
+            "switchport",
+            "speed",
+            "duplex",
+            "dot1x"
+          ],
+          "vipOptional": true
+        },
+        {
+          "if-name": {
+            "vipObjectType": "object",
+            "vipType": "variableName",
+            "vipValue": "",
+            "vipVariableName": "g0_1_1"
+          },
+          "switchport": {
+            "access": {
+              "vlan": {
+                "vlan": {
+                  "vipObjectType": "object",
+                  "vipType": "variableName",
+                  "vipValue": "",
+                  "vipVariableName": "switchport_g0_1_1-vlan-id"
+                }
+              }
+            },
+            "mode": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "access"
+            }
+          },
+          "shutdown": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "false",
+            "vipVariableName": "switchport_if_shutdown"
+          },
+          "speed": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_speed"
+          },
+          "duplex": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_duplex"
+          },
+          "dot1x": {
+            "vipType": "ignore",
+            "vipObjectType": "node-only"
+          },
+          "vipOptional": true,
+          "priority-order": [
+            "if-name",
+            "shutdown",
+            "switchport",
+            "speed",
+            "duplex",
+            "dot1x"
+          ]
+        },
+        {
+          "if-name": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "GigabitEthernet0/1/3",
+            "vipVariableName": "switchport_if_if_name"
+          },
+          "switchport": {
+            "access": {
+              "vlan": {
+                "vlan": {
+                  "vipObjectType": "object",
+                  "vipType": "ignore",
+                  "vipValue": "",
+                  "vipVariableName": "switchport_if_access_vlan_vlan"
+                }
+              }
+            },
+            "mode": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "access"
+            }
+          },
+          "shutdown": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "true",
+            "vipVariableName": "switchport_if_shutdown"
+          },
+          "speed": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_speed"
+          },
+          "duplex": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": "_empty",
+            "vipVariableName": "switchport_if_duplex"
+          },
+          "dot1x": {
+            "vipType": "ignore",
+            "vipObjectType": "node-only"
+          },
+          "priority-order": [
+            "if-name",
+            "shutdown",
+            "switchport",
+            "speed",
+            "duplex",
+            "dot1x"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "if-name"
+      ]
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 4,
+  "templateId": "10de3820-2cab-4711-8bb6-7208d630bc0f",
+  "createdOn": 1666715210753,
+  "@rid": 1524,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "c1111x-8p-switch",
+  "devicesAttached": 0,
+  "templateDescription": "c1111x-8p-switch",
+  "lastUpdatedOn": 1666715210753
+}

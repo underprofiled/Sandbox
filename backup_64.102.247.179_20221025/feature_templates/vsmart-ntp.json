@@ -1,0 +1,145 @@
+{
+  "deviceType": [
+    "vsmart"
+  ],
+  "templateMinVersion": "15.0.0",
+  "templateType": "ntp",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "keys": {
+      "trusted": {
+        "vipObjectType": "list",
+        "vipType": "ignore",
+        "vipVariableName": "trusted_key"
+      }
+    },
+    "server": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "name": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "100.64.1.1",
+            "vipVariableName": "ntp_server_host"
+          },
+          "key": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_server_auth_key"
+          },
+          "vpn": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 0,
+            "vipVariableName": "ntp_server_vpn"
+          },
+          "version": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 4,
+            "vipVariableName": "ntp_server_version"
+          },
+          "source-interface": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_source_interface"
+          },
+          "prefer": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "true",
+            "vipVariableName": "ntp_server_prefer"
+          },
+          "priority-order": [
+            "name",
+            "key",
+            "vpn",
+            "version",
+            "source-interface",
+            "prefer"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "name"
+      ]
+    }
+  },
+  "gTemplateClass": "vedge",
+  "templateDefinition": {
+    "keys": {
+      "trusted": {
+        "vipObjectType": "list",
+        "vipType": "ignore",
+        "vipVariableName": "trusted_key"
+      }
+    },
+    "server": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "name": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "100.64.1.1",
+            "vipVariableName": "ntp_server_host"
+          },
+          "key": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_server_auth_key"
+          },
+          "vpn": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 0,
+            "vipVariableName": "ntp_server_vpn"
+          },
+          "version": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 4,
+            "vipVariableName": "ntp_server_version"
+          },
+          "source-interface": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_source_interface"
+          },
+          "prefer": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "true",
+            "vipVariableName": "ntp_server_prefer"
+          },
+          "priority-order": [
+            "name",
+            "key",
+            "vpn",
+            "version",
+            "source-interface",
+            "prefer"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "name"
+      ]
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 1,
+  "templateId": "be70c532-c587-44be-8956-8374723b69da",
+  "createdOn": 1631911068194,
+  "@rid": 435,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "vsmart-ntp",
+  "devicesAttached": 1,
+  "templateDescription": "vsmart-ntp",
+  "lastUpdatedOn": 1631911068194
+}

@@ -1,0 +1,323 @@
+{
+  "deviceType": [
+    "vedge-C1111X-8P"
+  ],
+  "templateType": "eigrp",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "eigrp": {
+      "as-num": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": 100,
+        "vipVariableName": "eigrp_as_num"
+      },
+      "hello-interval": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 5,
+        "vipVariableName": "eigrp_hello-interval"
+      },
+      "hold-time": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 15,
+        "vipVariableName": "eigrp_hold-time"
+      },
+      "table-map": {
+        "name": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipVariableName": "eigrp_name"
+        }
+      },
+      "authentication": {
+        "type": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": "_empty",
+          "vipVariableName": "eigrp_type"
+        },
+        "auth-key": {},
+        "keychain": {
+          "key": {
+            "vipType": "ignore",
+            "vipValue": [],
+            "vipObjectType": "tree",
+            "vipPrimaryKey": [
+              "id"
+            ]
+          }
+        }
+      },
+      "address-family": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "type": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "ipv4"
+            },
+            "network": {
+              "vipType": "constant",
+              "vipValue": [
+                {
+                  "prefix": {
+                    "vipObjectType": "object",
+                    "vipType": "variableName",
+                    "vipValue": "",
+                    "vipVariableName": "vpn100eigrp_network_network_address_prefix"
+                  },
+                  "vipOptional": true,
+                  "priority-order": [
+                    "prefix"
+                  ]
+                }
+              ],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "prefix"
+              ]
+            },
+            "topology": {
+              "base": {
+                "redistribute": {
+                  "vipType": "constant",
+                  "vipValue": [
+                    {
+                      "protocol": {
+                        "vipObjectType": "object",
+                        "vipType": "constant",
+                        "vipValue": "omp",
+                        "vipVariableName": "eigrp_redistribute_protocol"
+                      },
+                      "route-map": {
+                        "vipObjectType": "object",
+                        "vipType": "ignore",
+                        "vipVariableName": "eigrp_redistribute_route_map"
+                      },
+                      "priority-order": [
+                        "protocol",
+                        "route-map"
+                      ]
+                    }
+                  ],
+                  "vipObjectType": "tree",
+                  "vipPrimaryKey": [
+                    "protocol"
+                  ]
+                }
+              }
+            },
+            "priority-order": [
+              "type",
+              "network",
+              "topology"
+            ]
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "type"
+        ]
+      },
+      "af-interface": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "name": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "Vlan103",
+              "vipVariableName": "vpn_ipv4_ip_name"
+            },
+            "shutdown": {
+              "vipObjectType": "node-only",
+              "vipType": "ignore",
+              "vipValue": "false",
+              "vipVariableName": "vpn_ipv4_ip_shutdown"
+            },
+            "summary-address": {
+              "vipType": "ignore",
+              "vipValue": [],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "prefix"
+              ]
+            }
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "name"
+        ]
+      }
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "eigrp": {
+      "as-num": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": 100,
+        "vipVariableName": "eigrp_as_num"
+      },
+      "hello-interval": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 5,
+        "vipVariableName": "eigrp_hello-interval"
+      },
+      "hold-time": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 15,
+        "vipVariableName": "eigrp_hold-time"
+      },
+      "table-map": {
+        "name": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipVariableName": "eigrp_name"
+        }
+      },
+      "authentication": {
+        "type": {
+          "vipObjectType": "object",
+          "vipType": "ignore",
+          "vipValue": "_empty",
+          "vipVariableName": "eigrp_type"
+        },
+        "auth-key": {},
+        "keychain": {
+          "key": {
+            "vipType": "ignore",
+            "vipValue": [],
+            "vipObjectType": "tree",
+            "vipPrimaryKey": [
+              "id"
+            ]
+          }
+        }
+      },
+      "address-family": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "type": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "ipv4"
+            },
+            "network": {
+              "vipType": "constant",
+              "vipValue": [
+                {
+                  "prefix": {
+                    "vipObjectType": "object",
+                    "vipType": "variableName",
+                    "vipValue": "",
+                    "vipVariableName": "vpn100eigrp_network_network_address_prefix"
+                  },
+                  "vipOptional": true,
+                  "priority-order": [
+                    "prefix"
+                  ]
+                }
+              ],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "prefix"
+              ]
+            },
+            "topology": {
+              "base": {
+                "redistribute": {
+                  "vipType": "constant",
+                  "vipValue": [
+                    {
+                      "protocol": {
+                        "vipObjectType": "object",
+                        "vipType": "constant",
+                        "vipValue": "omp",
+                        "vipVariableName": "eigrp_redistribute_protocol"
+                      },
+                      "route-map": {
+                        "vipObjectType": "object",
+                        "vipType": "ignore",
+                        "vipVariableName": "eigrp_redistribute_route_map"
+                      },
+                      "priority-order": [
+                        "protocol",
+                        "route-map"
+                      ]
+                    }
+                  ],
+                  "vipObjectType": "tree",
+                  "vipPrimaryKey": [
+                    "protocol"
+                  ]
+                }
+              }
+            },
+            "priority-order": [
+              "type",
+              "network",
+              "topology"
+            ]
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "type"
+        ]
+      },
+      "af-interface": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "name": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "Vlan103",
+              "vipVariableName": "vpn_ipv4_ip_name"
+            },
+            "shutdown": {
+              "vipObjectType": "node-only",
+              "vipType": "ignore",
+              "vipValue": "false",
+              "vipVariableName": "vpn_ipv4_ip_shutdown"
+            },
+            "summary-address": {
+              "vipType": "ignore",
+              "vipValue": [],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "prefix"
+              ]
+            }
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "name"
+        ]
+      }
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 0,
+  "templateId": "254aa221-15ec-4c65-b854-b9bf554fca39",
+  "createdOn": 1666715222698,
+  "@rid": 1572,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "c1111x-8p-eigrp-vpn100",
+  "devicesAttached": 0,
+  "templateDescription": "c1111x-8p-eigrp-vpn100",
+  "lastUpdatedOn": 1666715222698
+}

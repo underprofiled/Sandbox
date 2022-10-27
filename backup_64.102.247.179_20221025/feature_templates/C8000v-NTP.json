@@ -1,0 +1,173 @@
+{
+  "deviceType": [
+    "vedge-C8000V"
+  ],
+  "templateType": "cisco_ntp",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "master": {
+      "enable": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "enable"
+      },
+      "stratum": {},
+      "source": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "source"
+      }
+    },
+    "keys": {
+      "trusted": {
+        "vipObjectType": "list",
+        "vipType": "ignore",
+        "vipVariableName": "trusted_key"
+      }
+    },
+    "server": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "name": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "100.64.1.1",
+            "vipVariableName": "ntp_server_ntp_server_name"
+          },
+          "key": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_server_auth_key"
+          },
+          "vpn": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 0,
+            "vipVariableName": "ntp_server_vpn"
+          },
+          "version": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 4,
+            "vipVariableName": "ntp_server_version"
+          },
+          "source-interface": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_source_interface"
+          },
+          "prefer": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "true",
+            "vipVariableName": "ntp_server_prefer"
+          },
+          "priority-order": [
+            "name",
+            "key",
+            "vpn",
+            "version",
+            "source-interface",
+            "prefer"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "name"
+      ]
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "master": {
+      "enable": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "enable"
+      },
+      "stratum": {},
+      "source": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "source"
+      }
+    },
+    "keys": {
+      "trusted": {
+        "vipObjectType": "list",
+        "vipType": "ignore",
+        "vipVariableName": "trusted_key"
+      }
+    },
+    "server": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "name": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "100.64.1.1",
+            "vipVariableName": "ntp_server_ntp_server_name"
+          },
+          "key": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_server_auth_key"
+          },
+          "vpn": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 0,
+            "vipVariableName": "ntp_server_vpn"
+          },
+          "version": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 4,
+            "vipVariableName": "ntp_server_version"
+          },
+          "source-interface": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "ntp_server_source_interface"
+          },
+          "prefer": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": "true",
+            "vipVariableName": "ntp_server_prefer"
+          },
+          "priority-order": [
+            "name",
+            "key",
+            "vpn",
+            "version",
+            "source-interface",
+            "prefer"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "name"
+      ]
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 2,
+  "templateId": "475b2a0d-d41d-448d-902f-87fd92294ab8",
+  "createdOn": 1666715206436,
+  "@rid": 1513,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "C8000v-NTP",
+  "devicesAttached": 0,
+  "templateDescription": "C8000v NTP Template",
+  "lastUpdatedOn": 1666715206436
+}

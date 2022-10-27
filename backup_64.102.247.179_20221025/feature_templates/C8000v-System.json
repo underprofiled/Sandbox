@@ -1,0 +1,315 @@
+{
+  "deviceType": [
+    "vedge-C8000V"
+  ],
+  "templateType": "cisco_system",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "clock": {
+      "timezone": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "UTC",
+        "vipVariableName": "system_timezone"
+      }
+    },
+    "gps-location": {
+      "latitude": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 39.9525583,
+        "vipVariableName": "system_latitude"
+      },
+      "longitude": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": -75.165222,
+        "vipVariableName": "system_longitude"
+      }
+    },
+    "location": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "system_location"
+    },
+    "track-transport": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "system_track_transport"
+    },
+    "track-interface-tag": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "system_track_interface_tag"
+    },
+    "port-offset": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 0,
+      "vipVariableName": "system_port_offset"
+    },
+    "port-hop": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "system_port_hop"
+    },
+    "control-session-pps": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 300,
+      "vipVariableName": "system_control_session_pps"
+    },
+    "description": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "system_description"
+    },
+    "device-groups": {
+      "vipObjectType": "list",
+      "vipType": "ignore",
+      "vipVariableName": "system_device_groups"
+    },
+    "controller-group-list": {
+      "vipObjectType": "list",
+      "vipType": "ignore",
+      "vipVariableName": "system_controller_group_list"
+    },
+    "site-id": {
+      "vipObjectType": "object",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "system_site_id"
+    },
+    "overlay-id": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1,
+      "vipVariableName": "system_overlay_id"
+    },
+    "system-ip": {
+      "vipObjectType": "object",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "system_system_ip"
+    },
+    "host-name": {
+      "vipObjectType": "object",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "system_host_name"
+    },
+    "console-baud-rate": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "9600",
+      "vipVariableName": "system_console_baud_rate"
+    },
+    "max-omp-sessions": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "system_max_omp_sessions"
+    },
+    "track-default-gateway": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "system_track_default_gateway"
+    },
+    "idle-timeout": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "system_idle-timeout"
+    },
+    "admin-tech-on-failure": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "system_admin_tech_on_failure"
+    },
+    "on-demand": {
+      "enable": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "system_on-demand-enable"
+      },
+      "idle-timeout": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 10,
+        "vipVariableName": "system_on-demand-idle-timeout"
+      }
+    },
+    "tracker": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "name"
+      ]
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "clock": {
+      "timezone": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "UTC",
+        "vipVariableName": "system_timezone"
+      }
+    },
+    "gps-location": {
+      "latitude": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 39.9525583,
+        "vipVariableName": "system_latitude"
+      },
+      "longitude": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": -75.165222,
+        "vipVariableName": "system_longitude"
+      }
+    },
+    "location": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "system_location"
+    },
+    "track-transport": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "system_track_transport"
+    },
+    "track-interface-tag": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "system_track_interface_tag"
+    },
+    "port-offset": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 0,
+      "vipVariableName": "system_port_offset"
+    },
+    "port-hop": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "system_port_hop"
+    },
+    "control-session-pps": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 300,
+      "vipVariableName": "system_control_session_pps"
+    },
+    "description": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "system_description"
+    },
+    "device-groups": {
+      "vipObjectType": "list",
+      "vipType": "ignore",
+      "vipVariableName": "system_device_groups"
+    },
+    "controller-group-list": {
+      "vipObjectType": "list",
+      "vipType": "ignore",
+      "vipVariableName": "system_controller_group_list"
+    },
+    "site-id": {
+      "vipObjectType": "object",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "system_site_id"
+    },
+    "overlay-id": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1,
+      "vipVariableName": "system_overlay_id"
+    },
+    "system-ip": {
+      "vipObjectType": "object",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "system_system_ip"
+    },
+    "host-name": {
+      "vipObjectType": "object",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "system_host_name"
+    },
+    "console-baud-rate": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "9600",
+      "vipVariableName": "system_console_baud_rate"
+    },
+    "max-omp-sessions": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "system_max_omp_sessions"
+    },
+    "track-default-gateway": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "system_track_default_gateway"
+    },
+    "idle-timeout": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "system_idle-timeout"
+    },
+    "admin-tech-on-failure": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "system_admin_tech_on_failure"
+    },
+    "on-demand": {
+      "enable": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "system_on-demand-enable"
+      },
+      "idle-timeout": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 10,
+        "vipVariableName": "system_on-demand-idle-timeout"
+      }
+    },
+    "tracker": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "name"
+      ]
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 2,
+  "templateId": "f0cf0b0c-8aa1-451b-9038-031ebcdee8fd",
+  "createdOn": 1666715205655,
+  "@rid": 1511,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "C8000v-System",
+  "devicesAttached": 0,
+  "templateDescription": "c8000v Edge System Template",
+  "lastUpdatedOn": 1666715205655
+}

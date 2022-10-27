@@ -1,0 +1,21 @@
+{
+  "listId": "e5385c59-eee2-4dd0-bb1f-d943db1eeefc",
+  "name": "Realtime",
+  "type": "sla",
+  "description": "Realtime SLA",
+  "entries": [
+    {
+      "jitter": "30",
+      "latency": "150",
+      "loss": "1"
+    }
+  ],
+  "lastUpdated": 1631909917638,
+  "owner": "system",
+  "readOnly": false,
+  "version": "1.0",
+  "infoTag": "",
+  "referenceCount": 0,
+  "references": [],
+  "isActivatedByVsmart": false
+}
