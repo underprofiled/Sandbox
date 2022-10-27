@@ -1,0 +1,21 @@
+{
+  "listId": "be99ba93-e669-4766-8f0b-d7837468a551",
+  "name": "Business-Critical",
+  "type": "sla",
+  "description": "Business Critical SLA",
+  "entries": [
+    {
+      "jitter": "100",
+      "latency": "250",
+      "loss": "1"
+    }
+  ],
+  "lastUpdated": 1631909917034,
+  "owner": "system",
+  "readOnly": false,
+  "version": "1.0",
+  "infoTag": "",
+  "referenceCount": 0,
+  "references": [],
+  "isActivatedByVsmart": false
+}

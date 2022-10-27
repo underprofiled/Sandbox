@@ -1,0 +1,140 @@
+{
+  "definitionId": "5d9a9f79-e262-4cd9-89d2-ea474aee05f7",
+  "name": "Stage2_QoS_Data_Policy",
+  "type": "data",
+  "description": "QoS Classifications and Matching to Forwarding Classes",
+  "sequences": [
+    {
+      "sequenceId": 1,
+      "sequenceName": "Stage2_Voice_QoS",
+      "baseAction": "accept",
+      "sequenceType": "qos",
+      "sequenceIpType": "ipv4",
+      "match": {
+        "entries": [
+          {
+            "field": "dscp",
+            "value": "46"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "type": "set",
+          "parameter": [
+            {
+              "field": "forwardingClass",
+              "value": "Stage2_Voice_Forwarding"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sequenceId": 11,
+      "sequenceName": "Stage2_Critical_QoS",
+      "baseAction": "accept",
+      "sequenceType": "qos",
+      "sequenceIpType": "ipv4",
+      "match": {
+        "entries": [
+          {
+            "field": "dscp",
+            "value": "34"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "type": "set",
+          "parameter": [
+            {
+              "field": "forwardingClass",
+              "value": "Stage2_Critical_Forwarding"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sequenceId": 21,
+      "sequenceName": "Stage2_Best_Effort_QoS",
+      "baseAction": "accept",
+      "sequenceType": "qos",
+      "sequenceIpType": "ipv4",
+      "match": {
+        "entries": [
+          {
+            "field": "dscp",
+            "value": "0"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "type": "set",
+          "parameter": [
+            {
+              "field": "forwardingClass",
+              "value": "Stage2_Best_Effort_Forwarding"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sequenceId": 31,
+      "sequenceName": "Stage2_Scavenger_QoS",
+      "baseAction": "accept",
+      "sequenceType": "qos",
+      "sequenceIpType": "ipv4",
+      "match": {
+        "entries": [
+          {
+            "field": "dscp",
+            "value": "10"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "type": "set",
+          "parameter": [
+            {
+              "field": "forwardingClass",
+              "value": "Stage2_Scavenger_Forwarding"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "defaultAction": {
+    "type": "drop"
+  },
+  "lastUpdated": 1666728234808,
+  "owner": "netadmin",
+  "infoTag": "",
+  "mode": "",
+  "optimized": "false",
+  "referenceCount": 2,
+  "references": [
+    {
+      "id": "db793f4b-b9db-4e20-b482-f42e8e7f0404",
+      "property": "policyId"
+    },
+    {
+      "id": "db793f4b-b9db-4e20-b482-f42e8e7f0404",
+      "property": "policyId"
+    },
+    {
+      "id": "1973a230-3c9c-46d7-badc-b5e0959476de",
+      "property": "policyId"
+    },
+    {
+      "id": "1973a230-3c9c-46d7-badc-b5e0959476de",
+      "property": "policyId"
+    }
+  ],
+  "isActivatedByVsmart": false
+}

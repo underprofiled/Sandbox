@@ -1,0 +1,26 @@
+{
+  "listId": "d2cbf792-0d56-4d47-a45d-da8ac3097b27",
+  "name": "Stage2_Voice_SLA_Class",
+  "type": "sla",
+  "description": "Desc Not Required",
+  "entries": [
+    {
+      "latency": "20",
+      "loss": "1",
+      "jitter": "10"
+    }
+  ],
+  "lastUpdated": 1666728233139,
+  "owner": "netadmin",
+  "readOnly": false,
+  "version": "0",
+  "infoTag": "",
+  "referenceCount": 1,
+  "references": [
+    {
+      "id": "37294144-1086-42b4-8804-d11fa31620bd",
+      "type": "appRoute"
+    }
+  ],
+  "isActivatedByVsmart": false
+}

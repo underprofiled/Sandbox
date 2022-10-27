@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Stage2-Apply-SLAs",
+    "definitionId": "37294144-1086-42b4-8804-d11fa31620bd",
+    "type": "appRoute",
+    "description": "Stage2-Apply-SLAs",
+    "owner": "netadmin",
+    "lastUpdated": 1666728234344,
+    "infoTag": "",
+    "mode": "",
+    "optimized": "false",
+    "referenceCount": 2,
+    "references": [
+      {
+        "id": "db793f4b-b9db-4e20-b482-f42e8e7f0404",
+        "property": "policyId"
+      },
+      {
+        "id": "db793f4b-b9db-4e20-b482-f42e8e7f0404",
+        "property": "policyId"
+      },
+      {
+        "id": "1973a230-3c9c-46d7-badc-b5e0959476de",
+        "property": "policyId"
+      },
+      {
+        "id": "1973a230-3c9c-46d7-badc-b5e0959476de",
+        "property": "policyId"
+      }
+    ]
+  }
+]

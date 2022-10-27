@@ -1,0 +1,25 @@
+{
+  "listId": "99c9ed63-1627-451e-ae16-e0a9c77f226a",
+  "name": "Stage2_Scavenger_SLA_Class",
+  "type": "sla",
+  "description": "Desc Not Required",
+  "entries": [
+    {
+      "latency": "150",
+      "loss": "25"
+    }
+  ],
+  "lastUpdated": 1666728233338,
+  "owner": "netadmin",
+  "readOnly": false,
+  "version": "0",
+  "infoTag": "",
+  "referenceCount": 1,
+  "references": [
+    {
+      "id": "37294144-1086-42b4-8804-d11fa31620bd",
+      "type": "appRoute"
+    }
+  ],
+  "isActivatedByVsmart": false
+}

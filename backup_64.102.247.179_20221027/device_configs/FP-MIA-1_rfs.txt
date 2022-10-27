@@ -1,0 +1,337 @@
+  system
+   ztp-status            success
+   pseudo-confirm-commit 300
+   personality           vedge
+   device-model          vedge-C1111X-8P
+   chassis-number        C1111X-8P-FGL231791MJ
+   system-ip             100.64.255.7
+   overlay-id            1
+   site-id               300
+   no transport-gateway enable
+   port-offset           0
+   control-session-pps   300
+   admin-tech-on-failure
+   sp-organization-name  SSL_SD-WAN_PoV_POD14
+   organization-name     SSL_SD-WAN_PoV_POD14
+   port-hop
+   track-transport
+   track-default-gateway
+   console-baud-rate     9600
+   config-template-name  Stage2_1k_Single_DHCP_Transport2_with_TLOC
+   no on-demand enable
+   on-demand idle-timeout 10
+   vbond 64.102.247.181 port 12346
+   logging
+    disk
+     enable
+    !
+   !
+  !
+  bfd default-dscp 48
+  bfd app-route multiplier 6
+  bfd app-route poll-interval 600000
+  security
+   ipsec
+    rekey               86400
+    replay-window       512
+    authentication-type sha1-hmac ah-sha1-hmac
+    integrity-type      esp ip-udp-esp
+   !
+  !
+  sslproxy
+   no enable
+   rsa-key-modulus      2048
+   certificate-lifetime 730
+   eckey-type           P256
+   ca-tp-label          PROXY-SIGNING-CA
+   settings expired-certificate  drop
+   settings untrusted-certificate drop
+   settings unknown-status       drop
+   settings certificate-revocation-check none
+   settings unsupported-protocol-versions drop
+   settings unsupported-cipher-suites drop
+   settings failure-mode         close
+   settings minimum-tls-ver      TLSv1
+   dual-side optimization enable
+  !
+  sdwan
+   interface GigabitEthernet0/0/0
+    tunnel-interface
+     encapsulation ipsec weight 1
+     no border
+     color public-internet restrict
+     no last-resort-circuit
+     no low-bandwidth-link
+     no vbond-as-stun-server
+     vmanage-connection-preference 5
+     port-hop
+     carrier                       default
+     nat-refresh-interval          5
+     hello-interval                1000
+     hello-tolerance               12
+     no allow-service all
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service stun
+     allow-service https
+     no allow-service snmp
+     no allow-service bfd
+    exit
+   exit
+   interface GigabitEthernet0/0/1.10
+    tloc-extension GigabitEthernet0/0/0
+   exit
+   interface GigabitEthernet0/0/1.20
+    tunnel-interface
+     encapsulation ipsec weight 1
+     no border
+     color mpls restrict
+     no last-resort-circuit
+     no low-bandwidth-link
+     no vbond-as-stun-server
+     vmanage-connection-preference 5
+     port-hop
+     carrier                       default
+     nat-refresh-interval          5
+     hello-interval                1000
+     hello-tolerance               12
+     no allow-service all
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service stun
+     allow-service https
+     no allow-service snmp
+     no allow-service bfd
+    exit
+   exit
+   appqoe
+    no tcpopt enable
+    no dreopt enable
+    no httpopt enable
+   !
+   omp
+    no shutdown
+    send-path-limit  4
+    ecmp-limit       4
+    graceful-restart
+    no as-dot-notation
+    timers
+     holdtime               60
+     advertisement-interval 1
+     graceful-restart-timer 43200
+     eor-timer              300
+    exit
+    address-family ipv4 vrf 100
+     advertise connected
+     advertise static
+    !
+    address-family ipv4
+     advertise connected
+     advertise static
+    !
+    address-family ipv6
+     advertise connected
+     advertise static
+    !
+   !
+  !
+  service timestamps debug datetime msec
+  service timestamps log datetime msec
+  service call-home
+  service tcp-keepalives-in
+  service tcp-keepalives-out
+  no service tcp-small-servers
+  no service udp-small-servers
+  hostname FP-MIA-1
+  username admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo
+  vrf definition 100
+   description CorpVPN
+   rd          1:100
+   address-family ipv4
+    route-target export 1:100
+    route-target import 1:100
+    exit-address-family
+   !
+   address-family ipv6
+    exit-address-family
+   !
+  !
+  vrf definition Mgmt-intf
+   description Transport VPN
+   rd          1:512
+   address-family ipv4
+    route-target export 1:512
+    route-target import 1:512
+    exit-address-family
+   !
+   address-family ipv6
+    exit-address-family
+   !
+  !
+  ip arp proxy disable
+  no ip finger
+  no ip rcmd rcp-enable
+  no ip rcmd rsh-enable
+  no ip dhcp use class
+  no ip ftp passive
+  ip name-server 208.67.220.220 208.67.222.222
+  ip name-server vrf 100 208.67.220.220 208.67.220.222
+  ip route 0.0.0.0 0.0.0.0 172.30.50.54
+  ip bootp server
+  no ip source-route
+  no ip http server
+  no ip http secure-server
+  no ip http ctc authentication
+  ip nat inside source list nat-dia-vpn-hop-access-list interface GigabitEthernet0/0/0 overload
+  ip nat translation tcp-timeout 3600
+  ip nat translation udp-timeout 60
+  ip nat route vrf 100 0.0.0.0 0.0.0.0 global
+  ip nat settings central-policy
+  ipv6 unicast-routing
+  ipv6 rip vrf-mode enable
+  vlan 50,100
+  exit
+  policy-map shape_GigabitEthernet0/0/0
+   class class-default
+    shape average 1000000000
+   !
+  !
+  interface GigabitEthernet0/0/0
+   no shutdown
+   arp timeout 1200
+   ip address dhcp client-id GigabitEthernet0/0/0
+   no ip redirects
+   ip dhcp client default-router distance 1
+   ip mtu    1500
+   ip nat outside
+   load-interval 30
+   mtu           1500
+   negotiation auto
+   service-policy output shape_GigabitEthernet0/0/0
+  exit
+  interface GigabitEthernet0/0/1
+   no shutdown
+  exit
+  interface GigabitEthernet0/0/1.10
+   no shutdown
+   arp timeout 1200
+   encapsulation dot1Q 10
+   ip address 100.64.50.53 255.255.255.252
+   no ip redirects
+   ip mtu    1496
+  exit
+  interface GigabitEthernet0/0/1.20
+   no shutdown
+   arp timeout 1200
+   encapsulation dot1Q 20
+   ip address 172.30.50.53 255.255.255.252
+   no ip redirects
+   ip mtu    1496
+  exit
+  interface GigabitEthernet0/1/0
+   switchport access vlan 100
+   switchport mode access
+   no shutdown
+  exit
+  interface GigabitEthernet0/1/1
+   switchport access vlan 50
+   switchport mode access
+   no shutdown
+  exit
+  interface GigabitEthernet0/1/2
+   no shutdown
+  exit
+  interface GigabitEthernet0/1/3
+   switchport mode access
+   shutdown
+  exit
+  interface GigabitEthernet0/1/4
+   no shutdown
+  exit
+  interface GigabitEthernet0/1/5
+   no shutdown
+  exit
+  interface GigabitEthernet0/1/6
+   no shutdown
+  exit
+  interface GigabitEthernet0/1/7
+   no shutdown
+  exit
+  interface Vlan1
+   no shutdown
+  exit
+  interface Vlan100
+   no shutdown
+   arp timeout 1200
+   vrf forwarding 100
+   ip address 10.3.100.3 255.255.255.0
+   no ip redirects
+   ip mtu    1500
+   vrrp 100 address-family ipv4
+    vrrpv2
+    address 10.3.100.1
+    priority 100
+    timers advertise 100
+   exit
+  exit
+  interface Tunnel0
+   no shutdown
+   ip unnumbered GigabitEthernet0/0/0
+   no ip redirects
+   ipv6 unnumbered GigabitEthernet0/0/0
+   no ipv6 redirects
+   tunnel source GigabitEthernet0/0/0
+   tunnel mode sdwan
+  exit
+  interface Tunnel20001
+   no shutdown
+   ip unnumbered GigabitEthernet0/0/1.20
+   no ip redirects
+   ipv6 unnumbered GigabitEthernet0/0/1.20
+   no ipv6 redirects
+   tunnel source GigabitEthernet0/0/1.20
+   tunnel mode sdwan
+  exit
+  control-plane
+  !
+  clock timezone UTC 0 0
+  logging persistent size 104857600 filesize 10485760
+  no logging monitor
+  logging buffered 512000
+  logging console
+  aaa authentication login default local
+  aaa authorization exec default local
+  aaa server radius dynamic-author
+  !
+  mac address-table aging-time 300
+  no crypto ikev2 diagnose error
+  no crypto isakmp diagnose error
+  no network-clock revertive
+  snmp-server ifindex persist
+  line con 0
+   speed    9600
+   stopbits 1
+  !
+  line vty 0 4
+   transport input ssh
+  !
+  line vty 5 80
+   transport input ssh
+  !
+  lldp run
+  nat64 translation timeout tcp 3600
+  nat64 translation timeout udp 300
+ !
+!

@@ -1,0 +1,122 @@
+no config 
+config
+  system
+   host-name             vManage-Pod14
+   system-ip             100.64.255.159
+   site-id               1
+   admin-tech-on-failure
+   no vrrp-advt-with-phymac
+   sp-organization-name  SSL_SD-WAN_PoV_POD14
+   organization-name     SSL_SD-WAN_PoV_POD14
+   vbond 64.102.247.181
+   aaa
+    auth-order      local radius tacacs
+    usergroup basic
+     task system read
+     task interface read
+    !
+    usergroup global
+    !
+    usergroup netadmin
+    !
+    usergroup network_operations
+     task policy read write
+    !
+    usergroup operator
+     task system read
+     task interface read
+     task policy read
+     task routing read
+     task security read
+    !
+    usergroup resource_group_admin
+     task system read
+     task interface read
+    !
+    usergroup resource_group_basic
+     task system read
+     task interface read
+    !
+    usergroup resource_group_operator
+     task system read
+     task interface read
+    !
+    usergroup security_operations
+     task security read write
+    !
+    usergroup tenantadmin
+    !
+    user admin
+     password $6$7c5e97c758866ecc$bR2EhDgNaGJ3..Dn3ggiueDOkB3W88HvMnUFG37BhNqWYTR5naQWyJ5.Mx19zvOiUKefJZ.VW0a/Ec1c3s.x00
+    !
+    user jsacharo
+     password    $6$42219c360b33a26f$a9zmxrcpU1nsB3IIjKzFsb9JEzg9oo1voemeIssGf4TUmWXO1ED9.dxTHsrpAm6hkoLxqKboQiK8nZi3t4PTT.
+     description jsacharo
+     group       global netadmin
+    !
+    user netadmin
+     password    $6$eaca0bbf3fd146c5$Xfay5hBTqiy.qHJ8B4H1D.JeuewObhI8jW.mjGgcP6cBWmMOZ6Nq5YvObCC5haDJGHzAGwan2Wj5SIaOtOdhn.
+     description netadmin
+     group       global netadmin
+    !
+    user support
+     password    $6$d08b84c2f25a2e24$0WCZ0nIXCq1PbpQd1OsQY4ZNSj1xCKn/oqJIuS7ZS.FSOnZroU8llKbs9yxtKEW.bn1Qj/jVjO.Td8Z2T8xr31
+     description support
+     group       global netadmin
+    !
+    user temp
+     password $6$d58d5d29b7732f0d$8u9/KrgIz0jPC2yuqPp5oZj3wLVWuYQxkcf1duVvwzPkx6k1.eF.fxVxqHRM83OhkPsz4vENmj6sBaxqOSux21
+     group    netadmin
+    !
+    user trainer
+     password    $6$e981a0ac5e9e7fba$TSwKi29s4jl6YEXx3YfDo1M/Q7hm48/VOP1y6TNeDwc4hE64DnpDXAXDziM7jV1qglorcoKpXAUIeVrqmy9Za.
+     description trainer
+     group       global netadmin
+    !
+    ciscotacro-user true
+    ciscotacrw-user true
+   !
+   logging
+    disk
+     enable
+    !
+   !
+   ssh-server
+    cipher aes-128-192
+    kex-algo sha1
+   !
+   ntp
+    parent
+     no enable
+     stratum 5
+    exit
+   !
+  !
+  vpn 0
+   dns 208.67.220.220 secondary
+   dns 208.67.222.222 primary
+   interface eth0
+    ip address 64.102.247.179/25
+    no ipv6 shutdown
+    ipv6 dhcp-client
+    tunnel-interface
+     color public-internet
+     hello-tolerance 12
+     allow-service all
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service stun
+     allow-service https
+    !
+    no shutdown
+   !
+   ip route 0.0.0.0/0 64.102.247.129
+  !
+  vpn 512
+  !
+ !
+!

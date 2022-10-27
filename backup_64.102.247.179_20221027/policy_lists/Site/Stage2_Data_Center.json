@@ -1,0 +1,48 @@
+{
+  "listId": "3275457e-f4fa-4acb-8aa4-cdefeb69300d",
+  "name": "Stage2_Data_Center",
+  "type": "site",
+  "description": "Desc Not Required",
+  "entries": [
+    {
+      "siteId": "100"
+    }
+  ],
+  "lastUpdated": 1666728233443,
+  "owner": "netadmin",
+  "readOnly": false,
+  "version": "0",
+  "infoTag": "",
+  "referenceCount": 7,
+  "references": [
+    {
+      "id": "db793f4b-b9db-4e20-b482-f42e8e7f0404",
+      "type": ""
+    },
+    {
+      "id": "db793f4b-b9db-4e20-b482-f42e8e7f0404",
+      "type": ""
+    },
+    {
+      "id": "1973a230-3c9c-46d7-badc-b5e0959476de",
+      "type": ""
+    },
+    {
+      "id": "1973a230-3c9c-46d7-badc-b5e0959476de",
+      "type": ""
+    },
+    {
+      "id": "0a1dc577-9433-4594-b643-49f1d65227fd",
+      "type": "mesh"
+    },
+    {
+      "id": "0cde5c4c-9f40-45bc-8a92-2a9d5258ce0c",
+      "type": "vpnMembershipGroup"
+    },
+    {
+      "id": "3bb5eeb0-c70e-49c5-9f2f-cbb577948544",
+      "type": "hubAndSpoke"
+    }
+  ],
+  "isActivatedByVsmart": false
+}

@@ -1,0 +1,25 @@
+{
+  "listId": "17d13e68-80ea-4534-8276-f460ffa5776d",
+  "name": "Stage2_Best_Effort_SLA_Class",
+  "type": "sla",
+  "description": "Desc Not Required",
+  "entries": [
+    {
+      "latency": "100",
+      "loss": "5"
+    }
+  ],
+  "lastUpdated": 1666728233272,
+  "owner": "netadmin",
+  "readOnly": false,
+  "version": "0",
+  "infoTag": "",
+  "referenceCount": 1,
+  "references": [
+    {
+      "id": "37294144-1086-42b4-8804-d11fa31620bd",
+      "type": "appRoute"
+    }
+  ],
+  "isActivatedByVsmart": false
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Only-Permit-Corporate",
+    "definitionId": "0cde5c4c-9f40-45bc-8a92-2a9d5258ce0c",
+    "type": "vpnMembershipGroup",
+    "description": "Prevents Guest and Management Traffic to go into the Overlay",
+    "owner": "netadmin",
+    "lastUpdated": 1666728234075,
+    "infoTag": "",
+    "mode": "",
+    "optimized": "false",
+    "referenceCount": 2,
+    "references": [
+      {
+        "id": "db793f4b-b9db-4e20-b482-f42e8e7f0404",
+        "property": "policyId"
+      },
+      {
+        "id": "1973a230-3c9c-46d7-badc-b5e0959476de",
+        "property": "policyId"
+      }
+    ]
+  }
+]
