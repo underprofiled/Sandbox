@@ -1,0 +1,19 @@
+{
+  "listId": "c157188a-daa5-4c2d-957a-bfe441ae7862",
+  "name": "Stage2_Public_Internet",
+  "type": "color",
+  "description": "Desc Not Required",
+  "entries": [
+    {
+      "color": "public-internet"
+    }
+  ],
+  "lastUpdated": 1666728232948,
+  "owner": "netadmin",
+  "readOnly": false,
+  "version": "0",
+  "infoTag": "",
+  "referenceCount": 0,
+  "references": [],
+  "isActivatedByVsmart": false
+}

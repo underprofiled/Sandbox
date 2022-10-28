@@ -1,0 +1,48 @@
+[
+  {
+    "listId": "84d03a3a-6ff4-447c-a227-b6caaa5de214",
+    "name": "VPN100",
+    "type": "zone",
+    "description": "Desc Not Required",
+    "entries": [
+      {
+        "vpn": "100"
+      }
+    ],
+    "lastUpdated": 1666902132501,
+    "owner": "netadmin",
+    "readOnly": false,
+    "version": "0",
+    "infoTag": "",
+    "referenceCount": 1,
+    "references": [
+      {
+        "id": "e3dbb25e-366b-4f0b-b7fd-1b30cc8669e3",
+        "type": ""
+      }
+    ],
+    "activatedId": [
+      "e3dbb25e-366b-4f0b-b7fd-1b30cc8669e3"
+    ],
+    "isActivatedByVsmart": false
+  },
+  {
+    "listId": "75a82cca-af81-4772-8082-70112223e290",
+    "name": "VPN50",
+    "type": "zone",
+    "description": "Desc Not Required",
+    "entries": [
+      {
+        "vpn": "50"
+      }
+    ],
+    "lastUpdated": 1666902144710,
+    "owner": "netadmin",
+    "readOnly": false,
+    "version": "0",
+    "infoTag": "",
+    "referenceCount": 0,
+    "references": [],
+    "isActivatedByVsmart": false
+  }
+]

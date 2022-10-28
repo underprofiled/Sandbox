@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Stage2-Hub-Spoke-Policy",
+    "definitionId": "3bb5eeb0-c70e-49c5-9f2f-cbb577948544",
+    "type": "hubAndSpoke",
+    "description": "Converts Network to a Hub and Spoke Design",
+    "owner": "netadmin",
+    "lastUpdated": 1666728233791,
+    "infoTag": "",
+    "mode": "",
+    "optimized": "false",
+    "referenceCount": 1,
+    "references": [
+      {
+        "id": "1973a230-3c9c-46d7-badc-b5e0959476de",
+        "property": "policyId"
+      }
+    ]
+  }
+]

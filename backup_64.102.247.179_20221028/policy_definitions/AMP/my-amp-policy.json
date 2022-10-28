@@ -1,0 +1,29 @@
+{
+  "definitionId": "d7492104-5c23-4f2b-a5d6-774fdaba9eb4",
+  "name": "my-amp-policy",
+  "type": "advancedMalwareProtection",
+  "description": "",
+  "definition": {
+    "matchAllVpn": false,
+    "fileReputationCloudServer": "nam",
+    "fileReputationEstServer": "nam",
+    "fileReputationAlert": "critical",
+    "fileAnalysisCloudServer": "",
+    "fileAnalysisFileTypes": [],
+    "fileAnalysisAlert": "",
+    "targetVpns": []
+  },
+  "lastUpdated": 1666902547228,
+  "owner": "netadmin",
+  "infoTag": "",
+  "mode": "unified",
+  "optimized": "false",
+  "referenceCount": 1,
+  "references": [
+    {
+      "id": "16eda09e-4d88-460b-be2f-bfa58af14544",
+      "property": "definitionId"
+    }
+  ],
+  "isActivatedByVsmart": false
+}

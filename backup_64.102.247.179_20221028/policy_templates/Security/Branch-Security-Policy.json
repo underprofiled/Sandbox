@@ -1,0 +1,45 @@
+{
+  "policyName": "Branch-Security-Policy",
+  "policyDescription": "Branch-Security-Policy",
+  "policyMode": "unified",
+  "policyDefinition": {
+    "assembly": [
+      {
+        "definitionId": "f8d3da4c-e791-4bfa-a4a1-f603f6ee5be9",
+        "type": "zoneBasedFW",
+        "entries": [
+          {
+            "srcZoneListId": "self",
+            "dstZoneListId": "84d03a3a-6ff4-447c-a227-b6caaa5de214"
+          }
+        ]
+      }
+    ],
+    "settings": {
+      "auditTrail": "on",
+      "unifiedLogging": "on"
+    }
+  },
+  "policyDefinitionEdit": {
+    "assembly": [
+      {
+        "definitionId": "f8d3da4c-e791-4bfa-a4a1-f603f6ee5be9",
+        "type": "zoneBasedFW",
+        "entries": [
+          {
+            "srcZoneListId": "self",
+            "dstZoneListId": "84d03a3a-6ff4-447c-a227-b6caaa5de214"
+          }
+        ]
+      }
+    ],
+    "settings": {
+      "auditTrail": "on",
+      "unifiedLogging": "on"
+    }
+  },
+  "policyType": "feature",
+  "policyUseCase": "custom",
+  "policyContainsUtd": false,
+  "policyContainsTls": false
+}

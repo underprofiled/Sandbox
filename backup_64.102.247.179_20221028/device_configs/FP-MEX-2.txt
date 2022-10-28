@@ -1,0 +1,211 @@
+no config 
+config
+viptela-system:system 
+personality vedge
+device-model vedge-ISR-4331
+vbond 64.102.247.181 port 12346
+chassis-number ISR4331/K9-FDO22301VC8
+ztp-status success
+config-template-name "Stage2_4k_Dual_Transport_DHCP_and_DHCP"
+pseudo-confirm-commit 300
+!
+  system
+   personality           vedge
+   device-model          vedge-ISR-4331
+   host-name             FP-MEX-2
+   gps-location latitude 20.682
+   gps-location longitude -103.461
+   system-ip             100.64.255.2
+   site-id               100
+   admin-tech-on-failure
+   sp-organization-name  SSL_SD-WAN_PoV_POD14
+   organization-name     SSL_SD-WAN_PoV_POD14
+   device-version        17.09.01a.0.240
+   clock timezone America/New_York
+   console-baud-rate     9600
+   vbond 64.102.247.181 port 12346
+   logging
+    disk
+     enable
+    !
+   !
+  !
+  bfd color lte
+   hello-interval 1000
+   no pmtu-discovery
+   multiplier     1
+  !
+  bfd app-route multiplier 2
+  bfd app-route poll-interval 123400
+  security
+   ipsec
+    authentication-type ah-sha1-hmac sha1-hmac
+    integrity-type      ip-udp-esp esp
+   !
+  !
+  omp
+   no shutdown
+   send-path-limit  16
+   ecmp-limit       16
+   graceful-restart
+   advertise bgp
+   advertise connected
+   advertise static
+   ipv6-advertise connected
+   ipv6-advertise static
+  !
+  vpn 0
+   dns 208.67.220.220 primary
+   dns 208.67.222.222 secondary
+   service TE
+   exit
+   interface GigabitEthernet0/0/0
+    ip dhcp-client
+    nat
+     nat-choice interface
+    !
+    tunnel-interface
+     encapsulation ipsec
+     color mpls restrict
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service ospfv3
+     no allow-service stun
+     allow-service https
+     no allow-service snmp
+    !
+    autonegotiate
+    no shutdown
+    shaping-rate  1000000
+   !
+   interface GigabitEthernet0/0/1
+    ip dhcp-client
+    nat
+     nat-choice interface
+    !
+    tunnel-interface
+     encapsulation ipsec
+     color public-internet
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service ospfv3
+     no allow-service stun
+     allow-service https
+     no allow-service snmp
+    !
+    autonegotiate
+    no shutdown
+    shaping-rate  1000000
+   !
+   ip route 100.64.50.52/30 100.64.214.252
+  !
+  vpn 50
+   name CorpVPN
+   dns 208.67.220.220 primary
+   dns 208.67.220.222 secondary
+   route-import-from source-vpn 100 connected
+   interface GigabitEthernet0/1/1
+    ip address 10.1.50.1/24
+    autonegotiate
+    no shutdown
+    dhcp-server
+     address-pool 10.1.50.0/24
+     exclude      10.1.50.1-10.1.50.10
+     offer-time   600
+     lease-time   86400
+     admin-state  up
+     options
+      default-gateway 10.1.50.1
+      dns-servers     208.67.220.220
+     !
+    !
+   !
+   ip route 0.0.0.0/0 vpn 0
+   omp
+    advertise connected
+    advertise static
+   !
+  !
+  vpn 100
+   name CorpVPN
+   dns 208.67.220.220 primary
+   dns 208.67.222.222 secondary
+   route-import-from source-vpn 50 connected
+   router
+    bgp 64512
+     router-id 100.64.255.2
+     address-family ipv4-unicast
+      network 10.1.100.0/24
+      redistribute omp
+     !
+     neighbor 10.1.100.100
+      description "Datacenter Switch"
+      no shutdown
+      remote-as   65000
+      address-family ipv4-unicast
+      !
+     !
+    !
+   !
+   interface GigabitEthernet0/1/0
+    ip address 10.1.100.2/24
+    autonegotiate
+    no shutdown
+    vrrp 100
+     priority         100
+     ipv4 10.1.100.1
+     tloc-change-pref
+     value            100
+    !
+   !
+   ip route 0.0.0.0/0 vpn 0
+   omp
+    advertise connected
+    advertise static
+   !
+  !
+  vpn 512
+   name "Transport VPN"
+   interface GigabitEthernet0
+    ip dhcp-client
+    autonegotiate
+    shutdown
+   !
+  !
+  virtual-applications virtual-application 1
+   application-type utd
+   utd nat true
+  !
+  aaa
+   server-auth-order local
+   user admin
+    password  $6$wRoUVQ==$Ujj8J/h2llpidWIrhayO.FRiixbJ9LFqVmxIQTMCLFoIRKuQhb.JLPMzEKMybdXz5OYBwgtxQMQsFeI1BbNmJ.
+    secret    $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo
+    privilege 15
+   !
+  !
+  global
+  !
+ !
+!
+
+virtual-applications virtual-application 1
+application-type utd
+utd nat true
+utd service-gateway-ip 192.1.0.1/24
+utd service-ip 192.1.0.2/24
+!
+!
+!

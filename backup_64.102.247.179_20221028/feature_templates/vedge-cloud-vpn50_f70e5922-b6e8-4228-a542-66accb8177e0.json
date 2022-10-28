@@ -1,0 +1,327 @@
+{
+  "deviceType": [
+    "vedge-cloud"
+  ],
+  "templateType": "vpn-vedge",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "vpn-id": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": 50
+    },
+    "name": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "IoT",
+      "vipVariableName": "vpn_name"
+    },
+    "ecmp-hash-key": {
+      "layer4": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "vpn_layer4"
+      }
+    },
+    "tcp-optimization": {
+      "vipObjectType": "node-only",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "vpn_tcp_optimization"
+    },
+    "nat64-global": {
+      "prefix": {
+        "stateful": {}
+      }
+    },
+    "nat64": {
+      "v4": {
+        "pool": {
+          "vipType": "ignore",
+          "vipValue": [],
+          "vipObjectType": "tree",
+          "vipPrimaryKey": [
+            "name"
+          ]
+        }
+      }
+    },
+    "host": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "hostname"
+      ]
+    },
+    "service": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "svc-type"
+      ]
+    },
+    "ip": {
+      "route": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "prefix": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "100.64.252.102/32",
+              "vipVariableName": "vpn_ipv4_ip_prefix"
+            },
+            "next-hop": {
+              "vipType": "constant",
+              "vipValue": [
+                {
+                  "address": {
+                    "vipObjectType": "object",
+                    "vipType": "constant",
+                    "vipValue": "10.2.50.100",
+                    "vipVariableName": "vpn_next_hop_ip_address_0"
+                  },
+                  "distance": {
+                    "vipObjectType": "object",
+                    "vipType": "ignore",
+                    "vipValue": 1,
+                    "vipVariableName": "vpn_next_hop_ip_distance_0"
+                  },
+                  "priority-order": [
+                    "address",
+                    "distance"
+                  ]
+                }
+              ],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "address"
+              ]
+            },
+            "priority-order": [
+              "prefix",
+              "next-hop"
+            ]
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "prefix"
+        ]
+      },
+      "gre-route": {},
+      "ipsec-route": {},
+      "service-route": {}
+    },
+    "ipv6": {},
+    "omp": {
+      "advertise": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "priority-order": [
+              "protocol"
+            ],
+            "protocol": {
+              "vipType": "constant",
+              "vipValue": "static",
+              "vipObjectType": "object"
+            }
+          },
+          {
+            "priority-order": [
+              "protocol"
+            ],
+            "protocol": {
+              "vipType": "constant",
+              "vipValue": "connected",
+              "vipObjectType": "object"
+            }
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "protocol"
+        ]
+      },
+      "ipv6-advertise": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "protocol"
+        ]
+      }
+    }
+  },
+  "gTemplateClass": "vedge",
+  "templateDefinition": {
+    "vpn-id": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": 50
+    },
+    "name": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "IoT",
+      "vipVariableName": "vpn_name"
+    },
+    "ecmp-hash-key": {
+      "layer4": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "vpn_layer4"
+      }
+    },
+    "tcp-optimization": {
+      "vipObjectType": "node-only",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "vpn_tcp_optimization"
+    },
+    "nat64-global": {
+      "prefix": {
+        "stateful": {}
+      }
+    },
+    "nat64": {
+      "v4": {
+        "pool": {
+          "vipType": "ignore",
+          "vipValue": [],
+          "vipObjectType": "tree",
+          "vipPrimaryKey": [
+            "name"
+          ]
+        }
+      }
+    },
+    "host": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "hostname"
+      ]
+    },
+    "service": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "svc-type"
+      ]
+    },
+    "ip": {
+      "route": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "prefix": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "100.64.252.102/32",
+              "vipVariableName": "vpn_ipv4_ip_prefix"
+            },
+            "next-hop": {
+              "vipType": "constant",
+              "vipValue": [
+                {
+                  "address": {
+                    "vipObjectType": "object",
+                    "vipType": "constant",
+                    "vipValue": "10.2.50.100",
+                    "vipVariableName": "vpn_next_hop_ip_address_0"
+                  },
+                  "distance": {
+                    "vipObjectType": "object",
+                    "vipType": "ignore",
+                    "vipValue": 1,
+                    "vipVariableName": "vpn_next_hop_ip_distance_0"
+                  },
+                  "priority-order": [
+                    "address",
+                    "distance"
+                  ]
+                }
+              ],
+              "vipObjectType": "tree",
+              "vipPrimaryKey": [
+                "address"
+              ]
+            },
+            "priority-order": [
+              "prefix",
+              "next-hop"
+            ]
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "prefix"
+        ]
+      },
+      "gre-route": {},
+      "ipsec-route": {},
+      "service-route": {}
+    },
+    "ipv6": {},
+    "omp": {
+      "advertise": {
+        "vipType": "constant",
+        "vipValue": [
+          {
+            "priority-order": [
+              "protocol"
+            ],
+            "protocol": {
+              "vipType": "constant",
+              "vipValue": "static",
+              "vipObjectType": "object"
+            }
+          },
+          {
+            "priority-order": [
+              "protocol"
+            ],
+            "protocol": {
+              "vipType": "constant",
+              "vipValue": "connected",
+              "vipObjectType": "object"
+            }
+          }
+        ],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "protocol"
+        ]
+      },
+      "ipv6-advertise": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "protocol"
+        ]
+      }
+    }
+  },
+  "attachedMastersCount": 0,
+  "configType": "xml",
+  "templateId": "f70e5922-b6e8-4228-a542-66accb8177e0",
+  "createdOn": 1666728295292,
+  "@rid": 1864,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "vedge-cloud-vpn50",
+  "devicesAttached": 0,
+  "templateDescription": "vedge-cloud-vpn50",
+  "lastUpdatedOn": 1666728295292
+}

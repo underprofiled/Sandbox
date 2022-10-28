@@ -1,0 +1,14 @@
+[
+  {
+    "host-name": "FP-MEX-2",
+    "deviceIP": "100.64.255.2",
+    "local-system-ip": "100.64.255.2",
+    "site-id": "100",
+    "device-groups": [
+      "No groups"
+    ],
+    "uuid": "ISR4331/K9-FDO22301VC8",
+    "personality": "vedge",
+    "configCloudxMode": "none"
+  }
+]

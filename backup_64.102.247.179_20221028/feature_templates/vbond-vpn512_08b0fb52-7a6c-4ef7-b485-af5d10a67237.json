@@ -1,0 +1,239 @@
+{
+  "deviceType": [
+    "vedge-cloud"
+  ],
+  "templateType": "vpn-vedge",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "vpn-id": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": 512
+    },
+    "name": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_name"
+    },
+    "ecmp-hash-key": {
+      "layer4": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "vpn_layer4"
+      }
+    },
+    "tcp-optimization": {
+      "vipObjectType": "node-only",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "vpn_tcp_optimization"
+    },
+    "nat64-global": {
+      "prefix": {
+        "stateful": {}
+      }
+    },
+    "nat64": {
+      "v4": {
+        "pool": {
+          "vipType": "ignore",
+          "vipValue": [],
+          "vipObjectType": "tree",
+          "vipPrimaryKey": [
+            "name"
+          ]
+        }
+      }
+    },
+    "dns": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "role": {
+            "vipType": "constant",
+            "vipValue": "primary",
+            "vipObjectType": "object"
+          },
+          "dns-addr": {
+            "vipType": "variableName",
+            "vipValue": "",
+            "vipObjectType": "object",
+            "vipVariableName": "vpn512_dns_primary"
+          },
+          "priority-order": [
+            "dns-addr",
+            "role"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "dns-addr"
+      ]
+    },
+    "host": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "hostname"
+      ]
+    },
+    "service": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "svc-type"
+      ]
+    },
+    "ip": {
+      "gre-route": {},
+      "ipsec-route": {},
+      "service-route": {}
+    },
+    "ipv6": {},
+    "omp": {
+      "advertise": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "protocol"
+        ]
+      },
+      "ipv6-advertise": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "protocol"
+        ]
+      }
+    }
+  },
+  "gTemplateClass": "vedge",
+  "templateDefinition": {
+    "vpn-id": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": 512
+    },
+    "name": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_name"
+    },
+    "ecmp-hash-key": {
+      "layer4": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": "false",
+        "vipVariableName": "vpn_layer4"
+      }
+    },
+    "tcp-optimization": {
+      "vipObjectType": "node-only",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "vpn_tcp_optimization"
+    },
+    "nat64-global": {
+      "prefix": {
+        "stateful": {}
+      }
+    },
+    "nat64": {
+      "v4": {
+        "pool": {
+          "vipType": "ignore",
+          "vipValue": [],
+          "vipObjectType": "tree",
+          "vipPrimaryKey": [
+            "name"
+          ]
+        }
+      }
+    },
+    "dns": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "role": {
+            "vipType": "constant",
+            "vipValue": "primary",
+            "vipObjectType": "object"
+          },
+          "dns-addr": {
+            "vipType": "variableName",
+            "vipValue": "",
+            "vipObjectType": "object",
+            "vipVariableName": "vpn512_dns_primary"
+          },
+          "priority-order": [
+            "dns-addr",
+            "role"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "dns-addr"
+      ]
+    },
+    "host": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "hostname"
+      ]
+    },
+    "service": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "svc-type"
+      ]
+    },
+    "ip": {
+      "gre-route": {},
+      "ipsec-route": {},
+      "service-route": {}
+    },
+    "ipv6": {},
+    "omp": {
+      "advertise": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "protocol"
+        ]
+      },
+      "ipv6-advertise": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "protocol"
+        ]
+      }
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 1,
+  "templateId": "08b0fb52-7a6c-4ef7-b485-af5d10a67237",
+  "createdOn": 1631911070228,
+  "@rid": 441,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "vbond-vpn512",
+  "devicesAttached": 1,
+  "templateDescription": "vbond-vpn512",
+  "lastUpdatedOn": 1631911070228
+}

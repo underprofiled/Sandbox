@@ -1,0 +1,369 @@
+{
+  "deviceType": [
+    "vedge-C1111X-8P"
+  ],
+  "templateType": "vpn-interface-svi",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "admin",
+  "editedTemplateDefinition": {
+    "if-name": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "Vlan105",
+      "vipVariableName": "vpn_if_svi_if_name"
+    },
+    "description": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_description"
+    },
+    "ip": {
+      "address": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": "10.5.100.4/24",
+        "vipVariableName": "vpn_if_svi_if_ipv4_prefix"
+      },
+      "secondary-address": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      }
+    },
+    "ipv6": {
+      "address": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "vpn_if_svi_ipv6_ipv6_address"
+      },
+      "secondary-address": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      },
+      "access-list": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "direction"
+        ]
+      },
+      "dhcp-helper-v6": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      }
+    },
+    "dhcp-helper": {
+      "vipObjectType": "list",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_dhcp_helper"
+    },
+    "mtu": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1500,
+      "vipVariableName": "vpn_if_svi_ip_mtu"
+    },
+    "tcp-mss-adjust": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_tcp_mss_adjust"
+    },
+    "shutdown": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "false",
+      "vipVariableName": "vpn_if_svi_shutdown"
+    },
+    "arp-timeout": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1200,
+      "vipVariableName": "vpn_if_svi_arp_timeout"
+    },
+    "access-list": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "direction"
+      ]
+    },
+    "ip-directed-broadcast": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "vpn_if_ip-directed-broadcast"
+    },
+    "vrrp": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "grp-id": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": 1,
+            "vipVariableName": "vpn_if_vrrp_grpid"
+          },
+          "priority": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 100,
+            "vipVariableName": "vpn_if_vrrp_priority"
+          },
+          "timer": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 1,
+            "vipVariableName": "vpn_if_vrrp_timer"
+          },
+          "track-omp": {
+            "vipObjectType": "node-only",
+            "vipType": "ignore",
+            "vipValue": "false",
+            "vipVariableName": "vpn_if_vrrp_track_omp"
+          },
+          "track-prefix-list": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "vpn_if_vrrp_track_prefix_list"
+          },
+          "ipv4": {
+            "address": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "10.5.100.1",
+              "vipVariableName": "vpn_if_vrrp_vrrp_ipaddress"
+            }
+          },
+          "ipv4-secondary": {
+            "vipType": "ignore",
+            "vipValue": [],
+            "vipPrimaryKey": [
+              "address"
+            ]
+          },
+          "priority-order": [
+            "grp-id",
+            "priority",
+            "timer",
+            "track-omp",
+            "track-prefix-list",
+            "ipv4",
+            "ipv4-secondary"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "grp-id"
+      ]
+    },
+    "ipv6-vrrp": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "grp-id"
+      ]
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "if-name": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "Vlan105",
+      "vipVariableName": "vpn_if_svi_if_name"
+    },
+    "description": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_description"
+    },
+    "ip": {
+      "address": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": "10.5.100.4/24",
+        "vipVariableName": "vpn_if_svi_if_ipv4_prefix"
+      },
+      "secondary-address": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      }
+    },
+    "ipv6": {
+      "address": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "vpn_if_svi_ipv6_ipv6_address"
+      },
+      "secondary-address": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      },
+      "access-list": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "direction"
+        ]
+      },
+      "dhcp-helper-v6": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      }
+    },
+    "dhcp-helper": {
+      "vipObjectType": "list",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_dhcp_helper"
+    },
+    "mtu": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1500,
+      "vipVariableName": "vpn_if_svi_ip_mtu"
+    },
+    "tcp-mss-adjust": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_tcp_mss_adjust"
+    },
+    "shutdown": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "false",
+      "vipVariableName": "vpn_if_svi_shutdown"
+    },
+    "arp-timeout": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1200,
+      "vipVariableName": "vpn_if_svi_arp_timeout"
+    },
+    "access-list": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "direction"
+      ]
+    },
+    "ip-directed-broadcast": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "vpn_if_ip-directed-broadcast"
+    },
+    "vrrp": {
+      "vipType": "constant",
+      "vipValue": [
+        {
+          "grp-id": {
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipValue": 1,
+            "vipVariableName": "vpn_if_vrrp_grpid"
+          },
+          "priority": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 100,
+            "vipVariableName": "vpn_if_vrrp_priority"
+          },
+          "timer": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipValue": 1,
+            "vipVariableName": "vpn_if_vrrp_timer"
+          },
+          "track-omp": {
+            "vipObjectType": "node-only",
+            "vipType": "ignore",
+            "vipValue": "false",
+            "vipVariableName": "vpn_if_vrrp_track_omp"
+          },
+          "track-prefix-list": {
+            "vipObjectType": "object",
+            "vipType": "ignore",
+            "vipVariableName": "vpn_if_vrrp_track_prefix_list"
+          },
+          "ipv4": {
+            "address": {
+              "vipObjectType": "object",
+              "vipType": "constant",
+              "vipValue": "10.5.100.1",
+              "vipVariableName": "vpn_if_vrrp_vrrp_ipaddress"
+            }
+          },
+          "ipv4-secondary": {
+            "vipType": "ignore",
+            "vipValue": [],
+            "vipPrimaryKey": [
+              "address"
+            ]
+          },
+          "priority-order": [
+            "grp-id",
+            "priority",
+            "timer",
+            "track-omp",
+            "track-prefix-list",
+            "ipv4",
+            "ipv4-secondary"
+          ]
+        }
+      ],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "grp-id"
+      ]
+    },
+    "ipv6-vrrp": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "grp-id"
+      ]
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 1,
+  "templateId": "b6987b3a-916d-41e3-b671-93b9a4f6f21f",
+  "createdOn": 1666816410392,
+  "@rid": 1977,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "admin",
+  "templateName": "c1111x-8p-vpn100-vlan-svi-mia2",
+  "devicesAttached": 0,
+  "templateDescription": "c1111x-8p-vpn100-vlan-svi-mia2",
+  "lastUpdatedOn": 1666816410392
+}

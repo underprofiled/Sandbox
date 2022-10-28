@@ -1,0 +1,29 @@
+{
+  "listId": "b6b38309-1ed2-44bf-b8f1-b50561de7ec3",
+  "name": "Stage2_Critical_SLA_Class",
+  "type": "sla",
+  "description": "Desc Not Required",
+  "entries": [
+    {
+      "latency": "50",
+      "loss": "2",
+      "jitter": "20"
+    }
+  ],
+  "lastUpdated": 1666728233211,
+  "owner": "netadmin",
+  "readOnly": false,
+  "version": "0",
+  "infoTag": "",
+  "referenceCount": 1,
+  "references": [
+    {
+      "id": "37294144-1086-42b4-8804-d11fa31620bd",
+      "type": "appRoute"
+    }
+  ],
+  "activatedId": [
+    "d43062d2-91ef-4116-af7a-3f69eccea92d"
+  ],
+  "isActivatedByVsmart": true
+}

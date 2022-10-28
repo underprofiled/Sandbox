@@ -1,0 +1,25 @@
+{
+  "listId": "51e210d4-f02a-4028-adb6-4488e60f8972",
+  "name": "REAL_TIME_APPS",
+  "type": "app",
+  "description": "Real Time Applications List",
+  "entries": [
+    {
+      "app": "sip"
+    },
+    {
+      "app": "rtp"
+    },
+    {
+      "app": "skinny"
+    }
+  ],
+  "lastUpdated": 1631909916442,
+  "owner": "system",
+  "readOnly": true,
+  "version": "1.0",
+  "infoTag": "",
+  "referenceCount": 0,
+  "references": [],
+  "isActivatedByVsmart": false
+}

@@ -1,0 +1,152 @@
+{
+  "deviceType": [
+    "vedge-ISR-4331",
+    "vedge-C1111X-8P"
+  ],
+  "templateType": "cisco_dhcp_server",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "address-pool": {
+      "vipObjectType": "object",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "VLAN50_DHCP_Pool_Subnet_slash_Mask"
+    },
+    "exclude": {
+      "vipObjectType": "list",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "VLAN50_DHCP_Exclude_Addresses_StartIP-EndIP"
+    },
+    "lease-time": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 86400,
+      "vipVariableName": "lease_time"
+    },
+    "options": {
+      "interface-mtu": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "dhcp_interface_mtu"
+      },
+      "domain-name": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "dhcp_domain_name"
+      },
+      "default-gateway": {
+        "vipObjectType": "object",
+        "vipType": "variableName",
+        "vipValue": "",
+        "vipVariableName": "VLAN50_DHCP_Default_Gateway"
+      },
+      "dns-servers": {
+        "vipObjectType": "list",
+        "vipType": "variableName",
+        "vipValue": "",
+        "vipVariableName": "VLAN50_DNS_Server_IP"
+      },
+      "tftp-servers": {
+        "vipObjectType": "list",
+        "vipType": "ignore",
+        "vipVariableName": "tftp-server"
+      },
+      "option-code": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "code"
+        ]
+      }
+    },
+    "static-lease": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "mac-address"
+      ]
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "address-pool": {
+      "vipObjectType": "object",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "VLAN50_DHCP_Pool_Subnet_slash_Mask"
+    },
+    "exclude": {
+      "vipObjectType": "list",
+      "vipType": "variableName",
+      "vipValue": "",
+      "vipVariableName": "VLAN50_DHCP_Exclude_Addresses_StartIP-EndIP"
+    },
+    "lease-time": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 86400,
+      "vipVariableName": "lease_time"
+    },
+    "options": {
+      "interface-mtu": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "dhcp_interface_mtu"
+      },
+      "domain-name": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "dhcp_domain_name"
+      },
+      "default-gateway": {
+        "vipObjectType": "object",
+        "vipType": "variableName",
+        "vipValue": "",
+        "vipVariableName": "VLAN50_DHCP_Default_Gateway"
+      },
+      "dns-servers": {
+        "vipObjectType": "list",
+        "vipType": "variableName",
+        "vipValue": "",
+        "vipVariableName": "VLAN50_DNS_Server_IP"
+      },
+      "tftp-servers": {
+        "vipObjectType": "list",
+        "vipType": "ignore",
+        "vipVariableName": "tftp-server"
+      },
+      "option-code": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "code"
+        ]
+      }
+    },
+    "static-lease": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "mac-address"
+      ]
+    }
+  },
+  "attachedMastersCount": 0,
+  "configType": "xml",
+  "templateId": "23e403ca-9a2b-4974-90a4-9d351f6e6746",
+  "createdOn": 1666728242549,
+  "@rid": 1581,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "Framework_Branch_DHCP_Server_VLAN50",
+  "devicesAttached": 0,
+  "templateDescription": "DHCP Server Settings for VLAN 50",
+  "lastUpdatedOn": 1666728242549
+}

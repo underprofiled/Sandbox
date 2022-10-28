@@ -1,0 +1,53 @@
+{
+  "templateId": "a2fd636e-13d0-406d-b616-7612fa31fcc2",
+  "templateName": "Stage2_Advanced_Framework_ISR1k",
+  "templateDescription": "ISR1k Framework Advanced Template for DFW",
+  "deviceType": "vedge-C1111X-8P",
+  "deviceRole": "sdwan-edge",
+  "configType": "template",
+  "factoryDefault": false,
+  "policyId": "",
+  "featureTemplateUidRange": [],
+  "draftMode": false,
+  "generalTemplates": [
+    {
+      "templateId": "e72ce08f-deec-494b-a49a-5a699e387ec7",
+      "templateType": "cedge_aaa"
+    },
+    {
+      "templateId": "331bc20a-d356-4d43-acb5-bfb598cb8d29",
+      "templateType": "cisco_bfd"
+    },
+    {
+      "templateId": "3f2d7b8f-d155-4faa-9b29-e55cd9830e96",
+      "templateType": "cisco_omp"
+    },
+    {
+      "templateId": "154ac3ff-34e9-4c2f-ba22-bb3d03b98ee7",
+      "templateType": "cisco_security"
+    },
+    {
+      "templateId": "13e53b87-b3db-41bf-b683-5ab2d951302a",
+      "templateType": "cisco_system",
+      "subTemplates": [
+        {
+          "templateId": "973ea612-8375-4ca8-b63e-b1b308614d8f",
+          "templateType": "cisco_logging"
+        }
+      ]
+    },
+    {
+      "templateId": "392d0077-6cfe-4f68-af70-eb9070bc991b",
+      "templateType": "cisco_vpn"
+    },
+    {
+      "templateId": "09d483e1-2020-45a6-9252-f90dff2381b5",
+      "templateType": "cisco_vpn"
+    },
+    {
+      "templateId": "f1f9a39a-31a1-474e-8084-76147234b0a5",
+      "templateType": "cedge_global"
+    }
+  ],
+  "templateClass": "cedge"
+}

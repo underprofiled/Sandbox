@@ -1,0 +1,19 @@
+{
+  "listId": "3dc6138e-2f05-471e-9b7d-361dfef96c48",
+  "name": "Stage2_MPLS",
+  "type": "color",
+  "description": "Desc Not Required",
+  "entries": [
+    {
+      "color": "mpls"
+    }
+  ],
+  "lastUpdated": 1666728233039,
+  "owner": "netadmin",
+  "readOnly": false,
+  "version": "0",
+  "infoTag": "",
+  "referenceCount": 0,
+  "references": [],
+  "isActivatedByVsmart": false
+}

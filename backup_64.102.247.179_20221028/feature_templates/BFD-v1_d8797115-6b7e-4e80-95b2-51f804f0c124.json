@@ -1,0 +1,81 @@
+{
+  "deviceType": [
+    "vedge-C1111X-8P"
+  ],
+  "templateType": "cisco_bfd",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "app-route": {
+      "multiplier": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 6,
+        "vipVariableName": "bfd_multiplier"
+      },
+      "poll-interval": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": 30000,
+        "vipVariableName": "bfd_poll_interval"
+      }
+    },
+    "default-dscp": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 48,
+      "vipVariableName": "bfd_default_dscp"
+    },
+    "color": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "color"
+      ]
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "app-route": {
+      "multiplier": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 6,
+        "vipVariableName": "bfd_multiplier"
+      },
+      "poll-interval": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": 30000,
+        "vipVariableName": "bfd_poll_interval"
+      }
+    },
+    "default-dscp": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 48,
+      "vipVariableName": "bfd_default_dscp"
+    },
+    "color": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "color"
+      ]
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 0,
+  "templateId": "d8797115-6b7e-4e80-95b2-51f804f0c124",
+  "createdOn": 1666958665618,
+  "@rid": 2348,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "BFD-v1",
+  "devicesAttached": 0,
+  "templateDescription": "BFD-v1",
+  "lastUpdatedOn": 1666958665618
+}

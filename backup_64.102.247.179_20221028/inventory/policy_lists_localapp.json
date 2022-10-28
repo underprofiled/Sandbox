@@ -1,0 +1,62 @@
+[
+  {
+    "listId": "51a94b5c-0d72-4542-92ee-ed2b74b1ba3b",
+    "name": "Browsing",
+    "type": "localApp",
+    "description": "Local App List for Browsing",
+    "entries": [
+      {
+        "app": "netflix"
+      }
+    ],
+    "lastUpdated": 1631909916709,
+    "owner": "system",
+    "readOnly": true,
+    "version": "1.0",
+    "infoTag": "",
+    "referenceCount": 0,
+    "references": [],
+    "isActivatedByVsmart": false
+  },
+  {
+    "listId": "c7d27cf0-a9e7-449c-982b-842a9273460f",
+    "name": "Yahoo",
+    "type": "localApp",
+    "description": "Local App List for Yahoo",
+    "entries": [
+      {
+        "app": "yahoo"
+      },
+      {
+        "app": "yahoo-messenger-video"
+      }
+    ],
+    "lastUpdated": 1631909916877,
+    "owner": "system",
+    "readOnly": true,
+    "version": "1.0",
+    "infoTag": "",
+    "referenceCount": 0,
+    "references": [],
+    "isActivatedByVsmart": false
+  },
+  {
+    "listId": "306172da-b75c-4f7c-bc21-f7a96f5ede7f",
+    "name": "ICMP",
+    "type": "localApp",
+    "description": "Local App List for ICMP",
+    "entries": [
+      {
+        "app": "icmp"
+      }
+    ],
+    "lastUpdated": 1631909917885,
+    "owner": "system",
+    "readOnly": true,
+    "version": "1.0",
+    "infoTag": "",
+    "referenceCount": 0,
+    "references": [],
+    "isActivatedByVsmart": false
+  }
+]

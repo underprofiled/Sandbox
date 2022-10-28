@@ -1,0 +1,26 @@
+[
+  {
+    "host-name": "FP-DFW-1",
+    "deviceIP": "100.64.255.6",
+    "local-system-ip": "100.64.255.6",
+    "site-id": "400",
+    "device-groups": [
+      "No groups"
+    ],
+    "uuid": "C1111X-8P-FGL2317928Q",
+    "personality": "vedge",
+    "configCloudxMode": "none"
+  },
+  {
+    "host-name": "FP-LAS-1",
+    "deviceIP": "100.64.255.5",
+    "local-system-ip": "100.64.255.5",
+    "site-id": "200",
+    "device-groups": [
+      "No groups"
+    ],
+    "uuid": "C1111X-8P-FGL23179299",
+    "personality": "vedge",
+    "configCloudxMode": "none"
+  }
+]

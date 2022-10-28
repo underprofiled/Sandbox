@@ -1,0 +1,208 @@
+no config 
+config
+viptela-system:system 
+personality vedge
+device-model vedge-C1111X-8P
+vbond 64.102.247.181 port 12346
+chassis-number C1111X-8P-FGL23179299
+ztp-status success
+config-template-name "Stage2_1k_Dual_Transport_DHCP_and_DHCP"
+pseudo-confirm-commit 300
+!
+  system
+   personality           vedge
+   device-model          vedge-C1111X-8P
+   host-name             FP-LAS-1
+   gps-location latitude 36.091
+   gps-location longitude -115.1829
+   system-ip             100.64.255.5
+   site-id               200
+   admin-tech-on-failure
+   sp-organization-name  SSL_SD-WAN_PoV_POD14
+   organization-name     SSL_SD-WAN_PoV_POD14
+   device-version        17.09.01a.0.240
+   console-baud-rate     9600
+   on-demand enable
+   vbond 64.102.247.181 port 12346
+   logging
+    disk
+     enable
+    !
+   !
+  !
+  bfd
+  security
+   ipsec
+    authentication-type sha1-hmac ah-sha1-hmac
+    integrity-type      esp ip-udp-esp
+   !
+  !
+  omp
+   no shutdown
+   send-path-limit  16
+   ecmp-limit       16
+   graceful-restart
+   advertise bgp
+   advertise connected
+   advertise static
+   ipv6-advertise connected
+   ipv6-advertise static
+  !
+  vpn 0
+   dns 208.67.220.220 primary
+   dns 208.67.222.222 secondary
+   interface GigabitEthernet0/0/0
+    ip dhcp-client
+    nat
+     nat-choice interface
+    !
+    tunnel-interface
+     encapsulation ipsec
+     color mpls restrict
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service ospfv3
+     no allow-service stun
+     allow-service https
+     no allow-service snmp
+    !
+    autonegotiate
+    no shutdown
+    shaping-rate  1000000
+   !
+   interface GigabitEthernet0/0/1
+    ip dhcp-client
+    nat
+     nat-choice interface
+    !
+    tunnel-interface
+     encapsulation ipsec
+     color public-internet
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service ospfv3
+     no allow-service stun
+     allow-service https
+     no allow-service snmp
+    !
+    autonegotiate
+    no shutdown
+    shaping-rate  1000000
+   !
+   ip route 100.64.50.52/30 100.64.214.252
+  !
+  vpn 50
+   name CorpVPN
+   dns 208.67.220.220 primary
+   dns 208.67.220.222 secondary
+   route-import-from source-vpn 100 connected
+   interface Vlan50
+    ip address 10.6.50.1/24
+    no shutdown
+    vrrp 50
+     priority 100
+     ipv4 10.6.50.1
+    !
+   !
+   ip route 0.0.0.0/0 vpn 0
+   omp
+    advertise connected
+    advertise static
+   !
+  !
+  vpn 100
+   name CorpVPN
+   dns 208.67.220.220 primary
+   dns 208.67.222.222 secondary
+   route-import-from source-vpn 50 connected
+   interface Vlan100
+    ip address 10.6.100.3/24
+    no shutdown
+    vrrp 100
+     priority         100
+     ipv4 10.6.100.1
+     tloc-change-pref
+     value            100
+    !
+    dhcp-server
+     address-pool 10.6.100.0/24
+     exclude      10.6.100.1-10.6.100.10
+     offer-time   600
+     lease-time   86400
+     admin-state  up
+     options
+      default-gateway 10.6.100.1
+      dns-servers     208.67.220.220
+     !
+    !
+   !
+   ip route 0.0.0.0/0 vpn 0
+   omp
+    advertise connected
+    advertise static
+   !
+  !
+  vpn 512
+   name "Transport VPN"
+  !
+  switchport
+   slot    0
+   subslot 1
+   module  8
+   interface GigabitEthernet0/1/0
+    switchport
+     mode access
+     access vlan vlan 100
+    !
+    no shutdown
+    dot1x
+     no dot1x-enable
+     no pae-enable
+    !
+   !
+   interface GigabitEthernet0/1/1
+    switchport
+     mode access
+     access vlan vlan 50
+    !
+    no shutdown
+    dot1x
+     no dot1x-enable
+     no pae-enable
+    !
+   !
+   interface GigabitEthernet0/1/3
+    switchport
+     mode access
+    !
+    shutdown
+    dot1x
+     no dot1x-enable
+     no pae-enable
+    !
+   !
+  !
+  aaa
+   server-auth-order local
+   user admin
+    password  $6$wRoUVQ==$Ujj8J/h2llpidWIrhayO.FRiixbJ9LFqVmxIQTMCLFoIRKuQhb.JLPMzEKMybdXz5OYBwgtxQMQsFeI1BbNmJ.
+    secret    $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo
+    privilege 15
+   !
+  !
+  global
+  !
+ !
+!

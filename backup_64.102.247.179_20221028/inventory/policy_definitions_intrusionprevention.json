@@ -1,0 +1,20 @@
+[
+  {
+    "name": "My-IPS-Policy",
+    "definitionId": "b8aa7870-a86e-43a8-9533-0e7559c5bd4b",
+    "type": "intrusionPrevention",
+    "description": "Testing",
+    "owner": "netadmin",
+    "lastUpdated": 1666902501828,
+    "infoTag": "",
+    "mode": "unified",
+    "optimized": "false",
+    "referenceCount": 1,
+    "references": [
+      {
+        "id": "16eda09e-4d88-460b-be2f-bfa58af14544",
+        "property": "definitionId"
+      }
+    ]
+  }
+]

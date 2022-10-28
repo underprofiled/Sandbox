@@ -1,0 +1,143 @@
+{
+  "header": {
+    "generatedOn": 1666965958503,
+    "columns": [
+      {
+        "property": "csv-status",
+        "title": "Status",
+        "toolTip": "Input status",
+        "hideable": false,
+        "dataType": "string",
+        "editable": false,
+        "isDisplay": true,
+        "isLeftPinned": true,
+        "minWidth": 30,
+        "width": 30,
+        "display": "icon",
+        "iconProperty": "csv-status",
+        "icon": [
+          {
+            "key": "complete",
+            "value": "images/template_complete.png"
+          },
+          {
+            "key": "in_complete",
+            "value": "images/template_in_complete.png"
+          }
+        ]
+      },
+      {
+        "property": "csv-deviceId",
+        "title": "Chassis Number",
+        "toolTip": "UUID: csv-deviceId",
+        "hideable": false,
+        "dataType": "string",
+        "editable": false,
+        "isDisplay": true,
+        "isLeftPinned": true,
+        "objectType": "object",
+        "templateType": "None",
+        "values": false,
+        "optional": false,
+        "width": 280
+      },
+      {
+        "property": "csv-deviceIP",
+        "title": "System IP",
+        "toolTip": "Device IP: csv-deviceIP",
+        "hideable": false,
+        "dataType": "string",
+        "editable": false,
+        "isDisplay": true,
+        "isLeftPinned": true,
+        "objectType": "object",
+        "templateType": "None",
+        "values": false,
+        "optional": false,
+        "width": 100
+      },
+      {
+        "property": "csv-host-name",
+        "title": "Hostname",
+        "toolTip": "Host name: csv-host-name",
+        "hideable": false,
+        "dataType": "string",
+        "editable": false,
+        "isDisplay": true,
+        "isLeftPinned": true,
+        "objectType": "object",
+        "templateType": "None",
+        "values": false,
+        "optional": false,
+        "width": 180
+      },
+      {
+        "property": "//system/host-name",
+        "title": "Hostname",
+        "toolTip": "Set the hostname: //system/host-name",
+        "hideable": false,
+        "dataType": "string",
+        "editable": true,
+        "isDisplay": true,
+        "isLeftPinned": false,
+        "objectType": "object",
+        "templateType": "cisco_system",
+        "values": false,
+        "optional": false,
+        "width": 100
+      },
+      {
+        "property": "//system/system-ip",
+        "title": "System IP",
+        "toolTip": "Set the system IP address: //system/system-ip",
+        "hideable": false,
+        "dataType": "string",
+        "editable": true,
+        "isDisplay": true,
+        "isLeftPinned": false,
+        "objectType": "object",
+        "templateType": "cisco_system",
+        "values": false,
+        "optional": false,
+        "width": 100
+      },
+      {
+        "property": "//system/site-id",
+        "title": "Site ID",
+        "toolTip": "Set the site identifier: //system/site-id",
+        "hideable": false,
+        "dataType": "number",
+        "editable": true,
+        "isDisplay": true,
+        "isLeftPinned": false,
+        "objectType": "object",
+        "templateType": "cisco_system",
+        "values": false,
+        "optional": false,
+        "width": 100
+      }
+    ],
+    "templateVariableCount": 3,
+    "fields": {}
+  },
+  "data": [
+    {
+      "csv-status": "complete",
+      "csv-deviceId": "C8K-DA467EFA-AC06-44ED-A03E-CAB0821E6A95",
+      "csv-deviceIP": "-",
+      "csv-host-name": "-",
+      "//system/host-name": "CGW-1",
+      "//system/system-ip": "2.2.2.1",
+      "//system/site-id": "2000"
+    },
+    {
+      "csv-status": "complete",
+      "csv-deviceId": "C8K-E33E5401-7D19-6BA6-2E8F-36D7CEF458FE",
+      "csv-deviceIP": "-",
+      "csv-host-name": "-",
+      "//system/host-name": "CGW-2",
+      "//system/system-ip": "2.2.2.2",
+      "//system/site-id": "2000"
+    }
+  ]
+}

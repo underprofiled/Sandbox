@@ -1,0 +1,68 @@
+{
+  "definitionId": "23c8c5f9-daca-4099-a34d-11b036207bcf",
+  "name": "control-policy-branch-out",
+  "type": "control",
+  "description": "control-policy-branch-out",
+  "sequences": [
+    {
+      "sequenceId": 1,
+      "sequenceName": "TLOC",
+      "baseAction": "accept",
+      "sequenceType": "tloc",
+      "sequenceIpType": "ipv4",
+      "match": {
+        "entries": []
+      },
+      "actions": []
+    },
+    {
+      "sequenceId": 11,
+      "sequenceName": "Route",
+      "baseAction": "accept",
+      "sequenceType": "route",
+      "sequenceIpType": "ipv4",
+      "match": {
+        "entries": [
+          {
+            "field": "siteList",
+            "ref": "a0a0f434-61ef-48dc-adcb-4c650e5c1016"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "type": "set",
+          "parameter": [
+            {
+              "field": "tlocAction",
+              "value": "backup"
+            },
+            {
+              "field": "tlocList",
+              "ref": "5ca937db-6eac-4b55-b107-01b65a4b189f"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "defaultAction": {
+    "type": "accept"
+  },
+  "lastUpdated": 1666913199574,
+  "owner": "netadmin",
+  "infoTag": "",
+  "mode": "",
+  "optimized": "false",
+  "referenceCount": 1,
+  "references": [
+    {
+      "id": "d43062d2-91ef-4116-af7a-3f69eccea92d",
+      "property": "policyId"
+    }
+  ],
+  "activatedId": [
+    "d43062d2-91ef-4116-af7a-3f69eccea92d"
+  ],
+  "isActivatedByVsmart": true
+}

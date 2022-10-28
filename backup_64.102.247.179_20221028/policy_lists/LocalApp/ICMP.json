@@ -1,0 +1,19 @@
+{
+  "listId": "306172da-b75c-4f7c-bc21-f7a96f5ede7f",
+  "name": "ICMP",
+  "type": "localApp",
+  "description": "Local App List for ICMP",
+  "entries": [
+    {
+      "app": "icmp"
+    }
+  ],
+  "lastUpdated": 1631909917885,
+  "owner": "system",
+  "readOnly": true,
+  "version": "1.0",
+  "infoTag": "",
+  "referenceCount": 0,
+  "references": [],
+  "isActivatedByVsmart": false
+}

@@ -1,0 +1,89 @@
+{
+  "templateId": "1ff7ca4c-362c-4d8d-a48d-f5f08fcc2a3d",
+  "templateName": "Stage2_1k_Single_DHCP_Transport1_with_TLOC",
+  "templateDescription": "Single transport template for 1k devices - TLOC extension and DHCP WAN",
+  "deviceType": "vedge-C1111X-8P",
+  "deviceRole": "sdwan-edge",
+  "configType": "template",
+  "factoryDefault": false,
+  "policyId": "",
+  "featureTemplateUidRange": [],
+  "draftMode": false,
+  "connectionPreferenceRequired": true,
+  "connectionPreference": true,
+  "generalTemplates": [
+    {
+      "templateId": "e72ce08f-deec-494b-a49a-5a699e387ec7",
+      "templateType": "cedge_aaa"
+    },
+    {
+      "templateId": "331bc20a-d356-4d43-acb5-bfb598cb8d29",
+      "templateType": "cisco_bfd"
+    },
+    {
+      "templateId": "3f2d7b8f-d155-4faa-9b29-e55cd9830e96",
+      "templateType": "cisco_omp"
+    },
+    {
+      "templateId": "154ac3ff-34e9-4c2f-ba22-bb3d03b98ee7",
+      "templateType": "cisco_security"
+    },
+    {
+      "templateId": "e345a068-9f17-479c-b31f-98ea46965c50",
+      "templateType": "cisco_system",
+      "subTemplates": [
+        {
+          "templateId": "973ea612-8375-4ca8-b63e-b1b308614d8f",
+          "templateType": "cisco_logging"
+        }
+      ]
+    },
+    {
+      "templateId": "221f87e8-67ad-4d7a-9d53-bcfa15e1385a",
+      "templateType": "cisco_vpn",
+      "subTemplates": [
+        {
+          "templateId": "2fa34aa4-b3c0-4af3-9cf0-75b523fa8640",
+          "templateType": "cisco_vpn_interface"
+        },
+        {
+          "templateId": "4f69b415-0e21-451f-a31a-bb80913e2430",
+          "templateType": "cisco_vpn_interface"
+        },
+        {
+          "templateId": "7385905a-8f8c-4f14-8ce7-9f86940d8bd3",
+          "templateType": "cisco_vpn_interface"
+        }
+      ]
+    },
+    {
+      "templateId": "09d483e1-2020-45a6-9252-f90dff2381b5",
+      "templateType": "cisco_vpn"
+    },
+    {
+      "templateId": "b1a6d75b-4ee2-44cc-85e1-630e27e4d22d",
+      "templateType": "cisco_vpn",
+      "subTemplates": [
+        {
+          "templateId": "a1f17401-c458-47bd-a8ae-f67248507678",
+          "templateType": "vpn-interface-svi",
+          "subTemplates": [
+            {
+              "templateId": "959d7d9d-8eb3-4890-9860-becaed6052dd",
+              "templateType": "cisco_dhcp_server"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "templateId": "9ab2fd48-4adc-4711-a8b0-cf2b39e65cce",
+      "templateType": "cedge_global"
+    },
+    {
+      "templateId": "ff8bfcb9-bb9c-4bbe-bac1-daa1c523e529",
+      "templateType": "switchport"
+    }
+  ],
+  "templateClass": "cedge"
+}

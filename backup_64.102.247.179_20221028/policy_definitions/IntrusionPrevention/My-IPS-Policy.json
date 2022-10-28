@@ -1,0 +1,30 @@
+{
+  "definitionId": "b8aa7870-a86e-43a8-9533-0e7559c5bd4b",
+  "name": "My-IPS-Policy",
+  "type": "intrusionPrevention",
+  "description": "Testing",
+  "definition": {
+    "signatureSet": "balanced",
+    "inspectionMode": "protection",
+    "signatureWhiteList": {},
+    "logLevel": "error",
+    "logging": [],
+    "targetVpns": [
+      "50",
+      "100"
+    ]
+  },
+  "lastUpdated": 1666902501828,
+  "owner": "netadmin",
+  "infoTag": "",
+  "mode": "unified",
+  "optimized": "false",
+  "referenceCount": 1,
+  "references": [
+    {
+      "id": "16eda09e-4d88-460b-be2f-bfa58af14544",
+      "property": "definitionId"
+    }
+  ],
+  "isActivatedByVsmart": false
+}
