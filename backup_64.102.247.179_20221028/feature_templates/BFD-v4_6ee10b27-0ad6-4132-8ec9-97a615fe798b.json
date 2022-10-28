@@ -1,0 +1,82 @@
+{
+  "deviceType": [
+    "vedge-ISR-4331",
+    "vedge-C1111X-8P"
+  ],
+  "templateType": "cisco_bfd",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "app-route": {
+      "multiplier": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 6,
+        "vipVariableName": "bfd_multiplier"
+      },
+      "poll-interval": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": 60000,
+        "vipVariableName": "bfd_poll_interval"
+      }
+    },
+    "default-dscp": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 48,
+      "vipVariableName": "bfd_default_dscp"
+    },
+    "color": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "color"
+      ]
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "app-route": {
+      "multiplier": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 6,
+        "vipVariableName": "bfd_multiplier"
+      },
+      "poll-interval": {
+        "vipObjectType": "object",
+        "vipType": "constant",
+        "vipValue": 60000,
+        "vipVariableName": "bfd_poll_interval"
+      }
+    },
+    "default-dscp": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 48,
+      "vipVariableName": "bfd_default_dscp"
+    },
+    "color": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "color"
+      ]
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 3,
+  "templateId": "6ee10b27-0ad6-4132-8ec9-97a615fe798b",
+  "createdOn": 1666973949512,
+  "@rid": 2309,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "BFD-v4",
+  "devicesAttached": 0,
+  "templateDescription": "BFD-v4",
+  "lastUpdatedOn": 1666973949512
+}
