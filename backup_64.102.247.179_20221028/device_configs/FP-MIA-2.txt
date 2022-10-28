@@ -1,0 +1,189 @@
+no config 
+config
+viptela-system:system 
+personality vedge
+device-model vedge-C1111X-8P
+vbond 64.102.247.181 port 12346
+chassis-number C1111X-8P-FGL2317921T
+ztp-status success
+config-template-name "Stage2_1k_Single_DHCP_Transport1_with_TLOC"
+pseudo-confirm-commit 300
+!
+  system
+   personality           vedge
+   device-model          vedge-C1111X-8P
+   host-name             FP-MIA-2
+   gps-location latitude 25.958
+   gps-location longitude -80.238
+   system-ip             100.64.255.8
+   site-id               300
+   admin-tech-on-failure
+   sp-organization-name  SSL_SD-WAN_PoV_POD14
+   organization-name     SSL_SD-WAN_PoV_POD14
+   device-version        17.09.01a.0.240
+   clock timezone America/New_York
+   console-baud-rate     9600
+   vbond 64.102.247.181 port 12346
+   logging
+    disk
+     enable
+    !
+   !
+  !
+  bfd
+  security
+   ipsec
+    authentication-type sha1-hmac ah-sha1-hmac
+    integrity-type      esp ip-udp-esp
+   !
+  !
+  omp
+   no shutdown
+   graceful-restart
+   advertise connected
+   advertise static
+   ipv6-advertise connected
+   ipv6-advertise static
+  !
+  vpn 0
+   dns 208.67.220.220 primary
+   dns 208.67.222.222 secondary
+   interface GigabitEthernet0/0/0
+    ip dhcp-client
+    nat
+     nat-choice interface
+    !
+    tunnel-interface
+     encapsulation ipsec
+     color mpls restrict
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service ospfv3
+     no allow-service stun
+     allow-service https
+     no allow-service snmp
+    !
+    autonegotiate
+    no shutdown
+    shaping-rate  1000000
+   !
+   interface GigabitEthernet0/0/1.10
+    ip address 100.64.50.54/30
+    tunnel-interface
+     encapsulation ipsec
+     color public-internet restrict
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service ospfv3
+     no allow-service stun
+     allow-service https
+     no allow-service snmp
+    !
+    mtu      1496
+    no shutdown
+   !
+   interface GigabitEthernet0/0/1.20
+    ip address 172.30.50.54/30
+    mtu            1496
+    tloc-extension GigabitEthernet0/0/0
+    no shutdown
+   !
+   ip route 0.0.0.0/0 100.64.50.53
+   ip route 0.0.0.0/0 172.30.214.1
+  !
+  vpn 100
+   name CorpVPN
+   dns 208.67.220.220 primary
+   dns 208.67.222.222 secondary
+   route-import-from source-vpn 50 connected
+   interface Vlan100
+    ip address 10.3.100.4/24
+    no shutdown
+    vrrp 100
+     priority         99
+     ipv4 10.3.100.1
+     tloc-change-pref
+     value            100
+    !
+    dhcp-server
+     address-pool 10.3.100.0/24
+     exclude      10.3.100.1-10.3.100.10
+     offer-time   600
+     lease-time   86400
+     admin-state  up
+     options
+      default-gateway 10.3.100.1
+      dns-servers     208.67.220.220
+     !
+    !
+   !
+   ip route 0.0.0.0/0 vpn 0
+   omp
+    advertise connected
+    advertise static
+   !
+  !
+  vpn 512
+   name "Transport VPN"
+  !
+  switchport
+   slot    0
+   subslot 1
+   module  8
+   interface GigabitEthernet0/1/0
+    switchport
+     mode access
+     access vlan vlan 100
+    !
+    no shutdown
+    dot1x
+     no dot1x-enable
+     no pae-enable
+    !
+   !
+   interface GigabitEthernet0/1/1
+    switchport
+     mode access
+     access vlan vlan 50
+    !
+    no shutdown
+    dot1x
+     no dot1x-enable
+     no pae-enable
+    !
+   !
+   interface GigabitEthernet0/1/3
+    switchport
+     mode access
+    !
+    shutdown
+    dot1x
+     no dot1x-enable
+     no pae-enable
+    !
+   !
+  !
+  aaa
+   server-auth-order local
+   user admin
+    password  $6$wRoUVQ==$Ujj8J/h2llpidWIrhayO.FRiixbJ9LFqVmxIQTMCLFoIRKuQhb.JLPMzEKMybdXz5OYBwgtxQMQsFeI1BbNmJ.
+    secret    $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo
+    privilege 15
+   !
+  !
+  global
+  !
+ !
+!

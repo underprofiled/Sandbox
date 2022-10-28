@@ -1,0 +1,87 @@
+{
+  "templateId": "073544b5-4bbf-4b25-b96b-b7007f18f40b",
+  "templateName": "Stage2_Framework_ISR1k",
+  "templateDescription": "ISR1k Framework Template with placeholders",
+  "deviceType": "vedge-C1111X-8P",
+  "deviceRole": "sdwan-edge",
+  "configType": "template",
+  "factoryDefault": false,
+  "policyId": "",
+  "featureTemplateUidRange": [],
+  "draftMode": false,
+  "generalTemplates": [
+    {
+      "templateId": "e72ce08f-deec-494b-a49a-5a699e387ec7",
+      "templateType": "cedge_aaa"
+    },
+    {
+      "templateId": "331bc20a-d356-4d43-acb5-bfb598cb8d29",
+      "templateType": "cisco_bfd"
+    },
+    {
+      "templateId": "3f2d7b8f-d155-4faa-9b29-e55cd9830e96",
+      "templateType": "cisco_omp"
+    },
+    {
+      "templateId": "154ac3ff-34e9-4c2f-ba22-bb3d03b98ee7",
+      "templateType": "cisco_security"
+    },
+    {
+      "templateId": "13e53b87-b3db-41bf-b683-5ab2d951302a",
+      "templateType": "cisco_system",
+      "subTemplates": [
+        {
+          "templateId": "973ea612-8375-4ca8-b63e-b1b308614d8f",
+          "templateType": "cisco_logging"
+        }
+      ]
+    },
+    {
+      "templateId": "9fd87113-96c0-4746-aa6e-bc43b70cecab",
+      "templateType": "cisco_vpn",
+      "subTemplates": [
+        {
+          "templateId": "c0020f24-ff48-4cdf-9f21-6be33bb2c425",
+          "templateType": "cisco_vpn_interface"
+        },
+        {
+          "templateId": "d6487c88-b9e2-46ed-a617-fbd05b4fa0df",
+          "templateType": "cisco_vpn_interface"
+        },
+        {
+          "templateId": "eb870fd4-ccdb-4f9a-87b4-e4cf86c183fd",
+          "templateType": "cisco_vpn_interface"
+        }
+      ]
+    },
+    {
+      "templateId": "09d483e1-2020-45a6-9252-f90dff2381b5",
+      "templateType": "cisco_vpn"
+    },
+    {
+      "templateId": "9f9a4e05-0774-480c-ae63-2f5604e03aea",
+      "templateType": "cisco_vpn",
+      "subTemplates": [
+        {
+          "templateId": "0f4f9cab-0092-45da-8b13-ce7f4484888b",
+          "templateType": "vpn-interface-svi",
+          "subTemplates": [
+            {
+              "templateId": "dca4f9ef-d094-41d5-8407-2fa7b4e34796",
+              "templateType": "cisco_dhcp_server"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "templateId": "9ab2fd48-4adc-4711-a8b0-cf2b39e65cce",
+      "templateType": "cedge_global"
+    },
+    {
+      "templateId": "aeafe1f1-80df-4722-bb0e-60bee8256668",
+      "templateType": "switchport"
+    }
+  ],
+  "templateClass": "cedge"
+}

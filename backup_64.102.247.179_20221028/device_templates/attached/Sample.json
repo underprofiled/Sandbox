@@ -1,0 +1,24 @@
+[
+  {
+    "host-name": "--",
+    "deviceIP": "--",
+    "local-system-ip": "--",
+    "device-groups": [
+      "No groups"
+    ],
+    "uuid": "C8K-DA467EFA-AC06-44ED-A03E-CAB0821E6A95",
+    "personality": "vedge",
+    "configCloudxMode": "none"
+  },
+  {
+    "host-name": "--",
+    "deviceIP": "--",
+    "local-system-ip": "--",
+    "device-groups": [
+      "No groups"
+    ],
+    "uuid": "C8K-E33E5401-7D19-6BA6-2E8F-36D7CEF458FE",
+    "personality": "vedge",
+    "configCloudxMode": "none"
+  }
+]

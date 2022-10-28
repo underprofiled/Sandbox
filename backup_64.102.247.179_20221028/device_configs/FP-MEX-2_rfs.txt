@@ -1,0 +1,460 @@
+  system
+   ztp-status            success
+   pseudo-confirm-commit 300
+   personality           vedge
+   device-model          vedge-ISR-4331
+   chassis-number        ISR4331/K9-FDO22301VC8
+   gps-location latitude 20.682
+   gps-location longitude -103.461
+   system-ip             100.64.255.2
+   overlay-id            1
+   site-id               100
+   no transport-gateway enable
+   port-offset           0
+   control-session-pps   300
+   admin-tech-on-failure
+   sp-organization-name  SSL_SD-WAN_PoV_POD14
+   organization-name     SSL_SD-WAN_PoV_POD14
+   port-hop
+   track-transport
+   track-default-gateway
+   console-baud-rate     9600
+   config-template-name  Stage2_4k_Dual_Transport_DHCP_and_DHCP
+   no on-demand enable
+   on-demand idle-timeout 10
+   vbond 64.102.247.181 port 12346
+   logging
+    disk
+     enable
+    !
+   !
+  !
+  bfd color lte
+   hello-interval 1000
+   no pmtu-discovery
+   multiplier     1
+  !
+  bfd default-dscp 48
+  bfd app-route multiplier 2
+  bfd app-route poll-interval 123400
+  security
+   ipsec
+    rekey               86400
+    replay-window       512
+    authentication-type ah-sha1-hmac sha1-hmac
+    integrity-type      ip-udp-esp esp
+   !
+  !
+  sslproxy
+   no enable
+   rsa-key-modulus      2048
+   certificate-lifetime 730
+   eckey-type           P256
+   ca-tp-label          PROXY-SIGNING-CA
+   settings expired-certificate  drop
+   settings untrusted-certificate drop
+   settings unknown-status       drop
+   settings certificate-revocation-check none
+   settings unsupported-protocol-versions drop
+   settings unsupported-cipher-suites drop
+   settings failure-mode         close
+   settings minimum-tls-ver      TLSv1
+   dual-side optimization enable
+  !
+  sdwan
+   service TE vrf global
+   !
+   interface GigabitEthernet0/0/0
+    tunnel-interface
+     encapsulation ipsec weight 1
+     no border
+     color mpls restrict
+     no last-resort-circuit
+     no low-bandwidth-link
+     no vbond-as-stun-server
+     vmanage-connection-preference 5
+     port-hop
+     carrier                       default
+     nat-refresh-interval          5
+     hello-interval                1000
+     hello-tolerance               12
+     no allow-service all
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service stun
+     allow-service https
+     no allow-service snmp
+     no allow-service bfd
+    exit
+   exit
+   interface GigabitEthernet0/0/1
+    tunnel-interface
+     encapsulation ipsec weight 1
+     no border
+     color public-internet
+     no last-resort-circuit
+     no low-bandwidth-link
+     no vbond-as-stun-server
+     vmanage-connection-preference 5
+     port-hop
+     carrier                       default
+     nat-refresh-interval          5
+     hello-interval                1000
+     hello-tolerance               12
+     no allow-service all
+     no allow-service bgp
+     allow-service dhcp
+     allow-service dns
+     allow-service icmp
+     no allow-service sshd
+     no allow-service netconf
+     no allow-service ntp
+     no allow-service ospf
+     no allow-service stun
+     allow-service https
+     no allow-service snmp
+     no allow-service bfd
+    exit
+   exit
+   appqoe
+    no tcpopt enable
+    no dreopt enable
+    no httpopt enable
+   !
+   omp
+    no shutdown
+    send-path-limit  16
+    ecmp-limit       16
+    graceful-restart
+    no as-dot-notation
+    timers
+     holdtime               60
+     advertisement-interval 1
+     graceful-restart-timer 43200
+     eor-timer              300
+    exit
+    address-family ipv4 vrf 100
+     advertise connected
+     advertise static
+    !
+    address-family ipv4 vrf 50
+     advertise connected
+     advertise static
+    !
+    address-family ipv4
+     advertise bgp
+     advertise connected
+     advertise static
+    !
+    address-family ipv6
+     advertise connected
+     advertise static
+    !
+   !
+  !
+  service timestamps debug datetime msec
+  service timestamps log datetime msec
+  service tcp-keepalives-in
+  service tcp-keepalives-out
+  no service tcp-small-servers
+  no service udp-small-servers
+  hostname FP-MEX-2
+  username admin privilege 15 secret 9 $9$3V6L3V6L2VUI2k$ysPnXOdg8RLj9KgMdmfHdSHkdaMmiHzGaUpcqH6pfTo
+  vrf definition 100
+   description CorpVPN
+   rd          1:100
+   address-family ipv4
+    route-replicate from vrf 50 unicast connected
+    route-target export 64512:100
+    route-target import 64512:100
+    exit-address-family
+   !
+   address-family ipv6
+    exit-address-family
+   !
+  !
+  vrf definition 50
+   description CorpVPN
+   rd          1:50
+   address-family ipv4
+    route-replicate from vrf 100 unicast connected
+    route-target export 64512:50
+    route-target import 64512:50
+    exit-address-family
+   !
+   address-family ipv6
+    exit-address-family
+   !
+  !
+  vrf definition 65526
+   rd 65526:1
+   address-family ipv4
+    exit-address-family
+   !
+  !
+  vrf definition Mgmt-intf
+   description Transport VPN
+   rd          1:512
+   address-family ipv4
+    route-target export 64512:512
+    route-target import 64512:512
+    exit-address-family
+   !
+   address-family ipv6
+    exit-address-family
+   !
+  !
+  ip arp proxy disable
+  no ip finger
+  no ip rcmd rcp-enable
+  no ip rcmd rsh-enable
+  ip dhcp excluded-address vrf 50 10.1.50.1 10.1.50.10
+  ip dhcp pool vrf-50-GigabitEthernet0/1/1
+   vrf 50
+   lease 1 0 0
+   default-router 10.1.50.1
+   dns-server 208.67.220.220
+   network 10.1.50.0 255.255.255.0
+  exit
+  ip dhcp use hardware-address client-id
+  no ip dhcp use class
+  ip dhcp use vrf remote
+  no ip ftp passive
+  ip name-server 208.67.220.220 208.67.222.222
+  ip name-server vrf 100 208.67.220.220 208.67.222.222
+  ip name-server vrf 50 208.67.220.220 208.67.220.222
+  ip route 100.64.50.52 255.255.255.252 100.64.214.252
+  ip bootp server
+  no ip source-route
+  ip access-list extended My-FW-Policy-seq-Rule_1-acl_
+   11 permit object-group My-FW-Policy-Rule_1-svc_ any any
+  !
+  ip access-list extended health_probes_accesslist
+   10 permit udp any eq 3367 any eq 3367
+  !
+  no ip http server
+  no ip http secure-server
+  no ip http ctc authentication
+  ip nat inside source list nat-dia-vpn-hop-access-list interface GigabitEthernet0/0/0 overload
+  ip nat inside source list nat-dia-vpn-hop-access-list interface GigabitEthernet0/0/1 overload
+  ip nat translation tcp-timeout 3600
+  ip nat translation udp-timeout 60
+  ip nat route vrf 65526 0.0.0.0 0.0.0.0 global
+  ip nat route vrf 50 0.0.0.0 0.0.0.0 global
+  ip nat route vrf 100 0.0.0.0 0.0.0.0 global
+  ip nat settings central-policy
+  ipv6 unicast-routing
+  ipv6 rip vrf-mode enable
+  class-map type inspect match-all My-FW-Policy-seq-1-cm_
+   match access-group name My-FW-Policy-seq-Rule_1-acl_
+  !
+  class-map match-all health_probes_cmap
+   match access-group name health_probes_accesslist
+  !
+  policy-map type inspect My-FW-Policy
+   class type inspect My-FW-Policy-seq-1-cm_
+     pass
+   !
+   class class-default
+     pass
+   !
+  !
+  policy-map health_probes_pmap
+   class health_probes_cmap
+    priority level 1
+   !
+  !
+  policy-map shape_GigabitEthernet0/0/0
+   class class-default
+    shape average 1000000000
+   !
+  !
+  policy-map shape_GigabitEthernet0/0/1
+   class class-default
+    shape average 1000000000
+   !
+  !
+  interface GigabitEthernet0
+   shutdown
+   arp timeout 1200
+   vrf forwarding Mgmt-intf
+   ip address dhcp client-id GigabitEthernet0
+   no ip redirects
+   ip dhcp client default-router distance 1
+   ip mtu    1500
+   load-interval 30
+   mtu           1500
+   negotiation auto
+  exit
+  interface GigabitEthernet0/0/0
+   no shutdown
+   arp timeout 1200
+   ip address dhcp client-id GigabitEthernet0/0/0
+   no ip redirects
+   ip dhcp client default-router distance 1
+   ip mtu    1500
+   ip nat outside
+   load-interval 30
+   mtu           1500
+   negotiation auto
+   service-policy output shape_GigabitEthernet0/0/0
+  exit
+  interface GigabitEthernet0/0/1
+   no shutdown
+   arp timeout 1200
+   ip address dhcp client-id GigabitEthernet0/0/1
+   no ip redirects
+   ip dhcp client default-router distance 1
+   ip mtu    1500
+   ip nat outside
+   load-interval 30
+   mtu           1500
+   negotiation auto
+   service-policy output shape_GigabitEthernet0/0/1
+  exit
+  interface GigabitEthernet0/0/2
+   no shutdown
+  exit
+  interface GigabitEthernet0/1/0
+   no shutdown
+   arp timeout 1200
+   vrf forwarding 100
+   ip address 10.1.100.2 255.255.255.0
+   no ip redirects
+   ip mtu    1500
+   load-interval 30
+   mtu           1500
+   negotiation auto
+   vrrp 100 address-family ipv4
+    vrrpv2
+    address 10.1.100.1
+    priority 100
+    timers advertise 100
+    tloc-change increase-preference 100
+   exit
+  exit
+  interface GigabitEthernet0/1/1
+   no shutdown
+   arp timeout 1200
+   vrf forwarding 50
+   ip address 10.1.50.1 255.255.255.0
+   no ip redirects
+   ip mtu    1500
+   load-interval 30
+   mtu           1500
+   negotiation auto
+  exit
+  interface Tunnel0
+   no shutdown
+   ip unnumbered GigabitEthernet0/0/0
+   no ip redirects
+   ipv6 unnumbered GigabitEthernet0/0/0
+   no ipv6 redirects
+   tunnel source GigabitEthernet0/0/0
+   tunnel mode sdwan
+  exit
+  interface Tunnel1
+   no shutdown
+   ip unnumbered GigabitEthernet0/0/1
+   no ip redirects
+   ipv6 unnumbered GigabitEthernet0/0/1
+   no ipv6 redirects
+   tunnel source GigabitEthernet0/0/1
+   tunnel mode sdwan
+  exit
+  interface VirtualPortGroup0
+   no shutdown
+   vrf forwarding 65526
+   ip address 192.168.1.1 255.255.255.252
+  exit
+  interface VirtualPortGroup1
+   no shutdown
+   ip address 192.0.2.1 255.255.255.252
+   service-policy output health_probes_pmap
+  exit
+  object-group service My-FW-Policy-Rule_1-svc_
+   ip
+   exit
+  !
+  control-plane
+  !
+  clock summer-time EDT recurring
+  clock timezone EST -5 0
+  logging persistent size 104857600 filesize 10485760
+  no logging monitor
+  logging buffered 512000
+  logging console
+  aaa authentication login default local
+  aaa authorization exec default local
+  aaa server radius dynamic-author
+  !
+  parameter-map type inspect audit-trail-pmap_
+   audit-trail on
+  !
+  parameter-map type inspect-global
+   alert on
+   log dropped-packets
+   log flow-export fnf
+   multi-tenancy
+   vpn zone security
+  !
+  zone security VPN100
+   vpn 100
+  !
+  zone-pair security ZP_self_VPN100_My-FW-Policy source self destination VPN100
+   service-policy type inspect My-FW-Policy
+  !
+  no crypto ikev2 diagnose error
+  no crypto isakmp diagnose error
+  no network-clock revertive
+  router bgp 64512
+   bgp log-neighbor-changes
+   address-family ipv4 unicast vrf 100
+    bgp router-id 100.64.255.2
+    distance bgp 20 200 20
+    neighbor 10.1.100.100 remote-as 65000
+    neighbor 10.1.100.100 activate
+    neighbor 10.1.100.100 description Datacenter Switch
+    neighbor 10.1.100.100 send-community both
+    network 10.1.100.0 mask 255.255.255.0
+    redistribute omp
+    exit-address-family
+   !
+   timers bgp 60 180
+  !
+  snmp-server ifindex persist
+  line aux 0
+   stopbits 1
+  !
+  line con 0
+   speed    9600
+   stopbits 1
+  !
+  line vty 0 4
+   transport input ssh
+  !
+  line vty 5 80
+   transport input ssh
+  !
+  iox
+  app-hosting appid utd
+   app-resource package-profile cloud-medium
+   app-vnic gateway0 virtualportgroup 0 guest-interface 0
+    guest-ipaddress 192.168.1.2 netmask 255.255.255.252
+   !
+   app-vnic gateway1 virtualportgroup 1 guest-interface 1
+    guest-ipaddress 192.0.2.2 netmask 255.255.255.252
+   !
+   start
+  !
+  lldp run
+  nat64 translation timeout tcp 3600
+  nat64 translation timeout udp 300
+ !
+!

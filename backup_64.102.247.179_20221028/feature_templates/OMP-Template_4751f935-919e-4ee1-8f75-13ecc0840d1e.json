@@ -1,0 +1,147 @@
+{
+  "deviceType": [
+    "vsmart"
+  ],
+  "templateType": "omp-vsmart",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "graceful-restart": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "omp_graceful_restart"
+    },
+    "send-path-limit": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": 16,
+      "vipVariableName": "omp_send_path_limit"
+    },
+    "send-backup-paths": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "true",
+      "vipVariableName": "omp_send_backup_paths"
+    },
+    "discard-rejected": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "omp_discard_rejected"
+    },
+    "shutdown": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "omp_shutdown"
+    },
+    "timers": {
+      "advertisement-interval": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 1,
+        "vipVariableName": "omp_advertisement_interval"
+      },
+      "graceful-restart-timer": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 43200,
+        "vipVariableName": "omp_graceful_restart_timer"
+      },
+      "holdtime": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 60,
+        "vipVariableName": "omp_holdtime"
+      },
+      "eor-timer": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 300,
+        "vipVariableName": "omp_eor_timer"
+      }
+    },
+    "filter-route": {
+      "outbound": {
+        "affinity-group-preference": {}
+      }
+    }
+  },
+  "gTemplateClass": "vedge",
+  "templateDefinition": {
+    "graceful-restart": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "omp_graceful_restart"
+    },
+    "send-path-limit": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": 16,
+      "vipVariableName": "omp_send_path_limit"
+    },
+    "send-backup-paths": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "true",
+      "vipVariableName": "omp_send_backup_paths"
+    },
+    "discard-rejected": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "omp_discard_rejected"
+    },
+    "shutdown": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "omp_shutdown"
+    },
+    "timers": {
+      "advertisement-interval": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 1,
+        "vipVariableName": "omp_advertisement_interval"
+      },
+      "graceful-restart-timer": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 43200,
+        "vipVariableName": "omp_graceful_restart_timer"
+      },
+      "holdtime": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 60,
+        "vipVariableName": "omp_holdtime"
+      },
+      "eor-timer": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipValue": 300,
+        "vipVariableName": "omp_eor_timer"
+      }
+    },
+    "filter-route": {
+      "outbound": {
+        "affinity-group-preference": {}
+      }
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 1,
+  "templateId": "4751f935-919e-4ee1-8f75-13ecc0840d1e",
+  "createdOn": 1666914544656,
+  "@rid": 2208,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "OMP-Template",
+  "devicesAttached": 1,
+  "templateDescription": "OMP-Template",
+  "lastUpdatedOn": 1666914544656
+}

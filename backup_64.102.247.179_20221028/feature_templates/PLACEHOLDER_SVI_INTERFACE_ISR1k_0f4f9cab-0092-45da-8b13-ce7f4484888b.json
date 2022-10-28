@@ -1,0 +1,269 @@
+{
+  "deviceType": [
+    "vedge-C1111X-8P",
+    "vedge-C8000V",
+    "vedge-ISR-4331"
+  ],
+  "templateType": "vpn-interface-svi",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "if-name": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "Vlan1234",
+      "vipVariableName": "vpn_if_svi_if_name"
+    },
+    "description": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_description"
+    },
+    "ip": {
+      "address": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "vpn_if_svi_if_ipv4_prefix"
+      },
+      "secondary-address": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      }
+    },
+    "ipv6": {
+      "address": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "vpn_if_svi_ipv6_ipv6_address"
+      },
+      "secondary-address": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      },
+      "access-list": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "direction"
+        ]
+      },
+      "dhcp-helper-v6": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      }
+    },
+    "dhcp-helper": {
+      "vipObjectType": "list",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_dhcp_helper"
+    },
+    "mtu": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1500,
+      "vipVariableName": "vpn_if_svi_ip_mtu"
+    },
+    "tcp-mss-adjust": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_tcp_mss_adjust"
+    },
+    "shutdown": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "vpn_if_svi_shutdown"
+    },
+    "arp-timeout": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1200,
+      "vipVariableName": "vpn_if_svi_arp_timeout"
+    },
+    "access-list": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "direction"
+      ]
+    },
+    "ip-directed-broadcast": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "vpn_if_ip-directed-broadcast"
+    },
+    "intrf-mtu": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1500,
+      "vipVariableName": "vpn_if_svi_if_mtu"
+    },
+    "vrrp": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "grp-id"
+      ]
+    },
+    "ipv6-vrrp": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "grp-id"
+      ]
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "if-name": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "Vlan1234",
+      "vipVariableName": "vpn_if_svi_if_name"
+    },
+    "description": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_description"
+    },
+    "ip": {
+      "address": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "vpn_if_svi_if_ipv4_prefix"
+      },
+      "secondary-address": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      }
+    },
+    "ipv6": {
+      "address": {
+        "vipObjectType": "object",
+        "vipType": "ignore",
+        "vipVariableName": "vpn_if_svi_ipv6_ipv6_address"
+      },
+      "secondary-address": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      },
+      "access-list": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "direction"
+        ]
+      },
+      "dhcp-helper-v6": {
+        "vipType": "ignore",
+        "vipValue": [],
+        "vipObjectType": "tree",
+        "vipPrimaryKey": [
+          "address"
+        ]
+      }
+    },
+    "dhcp-helper": {
+      "vipObjectType": "list",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_dhcp_helper"
+    },
+    "mtu": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1500,
+      "vipVariableName": "vpn_if_svi_ip_mtu"
+    },
+    "tcp-mss-adjust": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "vpn_if_svi_tcp_mss_adjust"
+    },
+    "shutdown": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "true",
+      "vipVariableName": "vpn_if_svi_shutdown"
+    },
+    "arp-timeout": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1200,
+      "vipVariableName": "vpn_if_svi_arp_timeout"
+    },
+    "access-list": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "direction"
+      ]
+    },
+    "ip-directed-broadcast": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": "false",
+      "vipVariableName": "vpn_if_ip-directed-broadcast"
+    },
+    "intrf-mtu": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipValue": 1500,
+      "vipVariableName": "vpn_if_svi_if_mtu"
+    },
+    "vrrp": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "grp-id"
+      ]
+    },
+    "ipv6-vrrp": {
+      "vipType": "ignore",
+      "vipValue": [],
+      "vipObjectType": "tree",
+      "vipPrimaryKey": [
+        "grp-id"
+      ]
+    }
+  },
+  "configType": "xml",
+  "attachedMastersCount": 1,
+  "templateId": "0f4f9cab-0092-45da-8b13-ce7f4484888b",
+  "createdOn": 1666728254925,
+  "@rid": 1630,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "PLACEHOLDER_SVI_INTERFACE_ISR1k",
+  "devicesAttached": 0,
+  "templateDescription": "You need to remove or replace this with the correct Interface template for your topology",
+  "lastUpdatedOn": 1666728254925
+}

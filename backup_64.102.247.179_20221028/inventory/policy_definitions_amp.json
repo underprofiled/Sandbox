@@ -1,0 +1,20 @@
+[
+  {
+    "name": "my-amp-policy",
+    "definitionId": "d7492104-5c23-4f2b-a5d6-774fdaba9eb4",
+    "type": "advancedMalwareProtection",
+    "description": "",
+    "owner": "netadmin",
+    "lastUpdated": 1666902547228,
+    "infoTag": "",
+    "mode": "unified",
+    "optimized": "false",
+    "referenceCount": 1,
+    "references": [
+      {
+        "id": "16eda09e-4d88-460b-be2f-bfa58af14544",
+        "property": "definitionId"
+      }
+    ]
+  }
+]

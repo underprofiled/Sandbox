@@ -1,0 +1,20 @@
+[
+  {
+    "name": "My-FW-Policy",
+    "definitionId": "f8d3da4c-e791-4bfa-a4a1-f603f6ee5be9",
+    "type": "zoneBasedFW",
+    "description": "My-FW-Policy",
+    "owner": "netadmin",
+    "lastUpdated": 1666930383863,
+    "infoTag": "",
+    "mode": "unified",
+    "optimized": "false",
+    "referenceCount": 1,
+    "references": [
+      {
+        "id": "e3dbb25e-366b-4f0b-b7fd-1b30cc8669e3",
+        "property": "policyId"
+      }
+    ]
+  }
+]

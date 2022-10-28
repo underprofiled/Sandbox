@@ -1,0 +1,41 @@
+{
+  "definitionId": "f8d3da4c-e791-4bfa-a4a1-f603f6ee5be9",
+  "name": "My-FW-Policy",
+  "type": "zoneBasedFW",
+  "description": "My-FW-Policy",
+  "definition": {
+    "defaultAction": {
+      "type": "pass"
+    },
+    "sequences": [
+      {
+        "sequenceId": 1,
+        "sequenceName": "Rule 1",
+        "baseAction": "pass",
+        "sequenceType": "zoneBasedFW",
+        "match": {
+          "entries": []
+        },
+        "actions": []
+      }
+    ]
+  },
+  "lastUpdated": 1666930383863,
+  "owner": "netadmin",
+  "infoTag": "",
+  "mode": "unified",
+  "optimized": "false",
+  "referenceCount": 1,
+  "references": [
+    {
+      "id": "e3dbb25e-366b-4f0b-b7fd-1b30cc8669e3",
+      "property": "policyId"
+    }
+  ],
+  "activatedId": [
+    "e3dbb25e-366b-4f0b-b7fd-1b30cc8669e3"
+  ],
+  "isActivatedByVsmart": false,
+  "containsUtd": false,
+  "containsTls": false
+}

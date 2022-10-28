@@ -1,0 +1,47 @@
+{
+  "deviceType": [
+    "vedge-C1111X-8P"
+  ],
+  "templateType": "cisco_banner",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "login": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "Welcome",
+      "vipVariableName": "banner_login"
+    },
+    "motd": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "banner_motd"
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "login": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "Welcome",
+      "vipVariableName": "banner_login"
+    },
+    "motd": {
+      "vipObjectType": "object",
+      "vipType": "ignore",
+      "vipVariableName": "banner_motd"
+    }
+  },
+  "attachedMastersCount": 0,
+  "configType": "xml",
+  "templateId": "d6c2a314-ac57-4b77-a94d-81ae2e2fc70b",
+  "createdOn": 1666958609027,
+  "@rid": 2347,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "C1111x-banner-v2",
+  "devicesAttached": 0,
+  "templateDescription": "C1111x-banner-v2",
+  "lastUpdatedOn": 1666958609027
+}

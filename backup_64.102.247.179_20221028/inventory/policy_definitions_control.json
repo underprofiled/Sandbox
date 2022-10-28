@@ -1,0 +1,20 @@
+[
+  {
+    "name": "control-policy-branch-out",
+    "definitionId": "23c8c5f9-daca-4099-a34d-11b036207bcf",
+    "type": "control",
+    "description": "control-policy-branch-out",
+    "owner": "netadmin",
+    "lastUpdated": 1666913199574,
+    "infoTag": "",
+    "mode": "",
+    "optimized": "false",
+    "referenceCount": 1,
+    "references": [
+      {
+        "id": "d43062d2-91ef-4116-af7a-3f69eccea92d",
+        "property": "policyId"
+      }
+    ]
+  }
+]

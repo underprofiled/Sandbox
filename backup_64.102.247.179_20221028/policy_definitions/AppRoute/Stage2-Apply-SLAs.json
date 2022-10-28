@@ -1,0 +1,160 @@
+{
+  "definitionId": "37294144-1086-42b4-8804-d11fa31620bd",
+  "name": "Stage2-Apply-SLAs",
+  "type": "appRoute",
+  "description": "Stage2-Apply-SLAs",
+  "sequences": [
+    {
+      "sequenceId": 1,
+      "sequenceName": "Stage2_Voice_SLA",
+      "sequenceType": "appRoute",
+      "sequenceIpType": "ipv4",
+      "match": {
+        "entries": [
+          {
+            "field": "dscp",
+            "value": "46"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "type": "slaClass",
+          "parameter": [
+            {
+              "field": "name",
+              "ref": "d2cbf792-0d56-4d47-a45d-da8ac3097b27"
+            },
+            {
+              "field": "preferredColor",
+              "value": "mpls"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sequenceId": 11,
+      "sequenceName": "Stage2_Critical_SLA",
+      "sequenceType": "appRoute",
+      "sequenceIpType": "ipv4",
+      "match": {
+        "entries": [
+          {
+            "field": "dscp",
+            "value": "34"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "type": "slaClass",
+          "parameter": [
+            {
+              "field": "name",
+              "ref": "b6b38309-1ed2-44bf-b8f1-b50561de7ec3"
+            },
+            {
+              "field": "preferredColor",
+              "value": "public-internet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sequenceId": 21,
+      "sequenceName": "Stage2_Best_Effort_SLA",
+      "sequenceType": "appRoute",
+      "sequenceIpType": "ipv4",
+      "match": {
+        "entries": [
+          {
+            "field": "dscp",
+            "value": "0"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "type": "slaClass",
+          "parameter": [
+            {
+              "field": "name",
+              "ref": "17d13e68-80ea-4534-8276-f460ffa5776d"
+            },
+            {
+              "field": "preferredColor",
+              "value": "public-internet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sequenceId": 31,
+      "sequenceName": "Stage2_Scavenger_SLA",
+      "sequenceType": "appRoute",
+      "sequenceIpType": "ipv4",
+      "match": {
+        "entries": [
+          {
+            "field": "dscp",
+            "value": "10"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "type": "slaClass",
+          "parameter": [
+            {
+              "field": "name",
+              "ref": "99c9ed63-1627-451e-ae16-e0a9c77f226a"
+            },
+            {
+              "field": "preferredColor",
+              "value": "public-internet"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lastUpdated": 1666728234344,
+  "owner": "netadmin",
+  "infoTag": "",
+  "mode": "",
+  "optimized": "false",
+  "referenceCount": 3,
+  "references": [
+    {
+      "id": "d43062d2-91ef-4116-af7a-3f69eccea92d",
+      "property": "policyId"
+    },
+    {
+      "id": "d43062d2-91ef-4116-af7a-3f69eccea92d",
+      "property": "policyId"
+    },
+    {
+      "id": "db793f4b-b9db-4e20-b482-f42e8e7f0404",
+      "property": "policyId"
+    },
+    {
+      "id": "db793f4b-b9db-4e20-b482-f42e8e7f0404",
+      "property": "policyId"
+    },
+    {
+      "id": "1973a230-3c9c-46d7-badc-b5e0959476de",
+      "property": "policyId"
+    },
+    {
+      "id": "1973a230-3c9c-46d7-badc-b5e0959476de",
+      "property": "policyId"
+    }
+  ],
+  "activatedId": [
+    "d43062d2-91ef-4116-af7a-3f69eccea92d"
+  ],
+  "isActivatedByVsmart": true
+}

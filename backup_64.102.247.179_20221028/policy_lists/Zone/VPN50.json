@@ -1,0 +1,19 @@
+{
+  "listId": "75a82cca-af81-4772-8082-70112223e290",
+  "name": "VPN50",
+  "type": "zone",
+  "description": "Desc Not Required",
+  "entries": [
+    {
+      "vpn": "50"
+    }
+  ],
+  "lastUpdated": 1666902144710,
+  "owner": "netadmin",
+  "readOnly": false,
+  "version": "0",
+  "infoTag": "",
+  "referenceCount": 0,
+  "references": [],
+  "isActivatedByVsmart": false
+}

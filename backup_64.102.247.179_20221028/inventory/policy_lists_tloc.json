@@ -1,0 +1,46 @@
+[
+  {
+    "listId": "5ca937db-6eac-4b55-b107-01b65a4b189f",
+    "name": "Hub-Tlocs",
+    "type": "tloc",
+    "description": "Desc Not Required",
+    "entries": [
+      {
+        "tloc": "100.64.255.1",
+        "color": "public-internet",
+        "encap": "ipsec"
+      },
+      {
+        "tloc": "100.64.255.1",
+        "color": "mpls",
+        "encap": "ipsec"
+      },
+      {
+        "tloc": "100.64.255.2",
+        "color": "public-internet",
+        "encap": "ipsec"
+      },
+      {
+        "tloc": "100.64.255.2",
+        "color": "mpls",
+        "encap": "ipsec"
+      }
+    ],
+    "lastUpdated": 1666913180372,
+    "owner": "netadmin",
+    "readOnly": false,
+    "version": "0",
+    "infoTag": "",
+    "referenceCount": 1,
+    "references": [
+      {
+        "id": "23c8c5f9-daca-4099-a34d-11b036207bcf",
+        "type": "control"
+      }
+    ],
+    "activatedId": [
+      "d43062d2-91ef-4116-af7a-3f69eccea92d"
+    ],
+    "isActivatedByVsmart": true
+  }
+]

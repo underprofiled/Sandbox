@@ -1,0 +1,37 @@
+{
+  "definitionId": "1c515f7a-629f-44c5-94d4-7095b45d104a",
+  "name": "My-URL-Filtering-Policy",
+  "type": "urlFiltering",
+  "description": "",
+  "definition": {
+    "webCategoriesAction": "block",
+    "webCategories": [
+      "gambling"
+    ],
+    "webReputation": "moderate-risk",
+    "urlWhiteList": {},
+    "urlBlackList": {},
+    "blockPageAction": "text",
+    "blockPageContents": "Access to the requested page has been denied. Please contact your Network Administrator",
+    "enableAlerts": true,
+    "alerts": [
+      "blacklist",
+      "categories-reputation"
+    ],
+    "logging": [],
+    "targetVpns": []
+  },
+  "lastUpdated": 1666907525064,
+  "owner": "netadmin",
+  "infoTag": "",
+  "mode": "unified",
+  "optimized": "false",
+  "referenceCount": 1,
+  "references": [
+    {
+      "id": "16eda09e-4d88-460b-be2f-bfa58af14544",
+      "property": "definitionId"
+    }
+  ],
+  "isActivatedByVsmart": false
+}

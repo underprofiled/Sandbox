@@ -1,0 +1,35 @@
+{
+  "deviceType": [
+    "vedge-C1111X-8P"
+  ],
+  "templateType": "cli-template",
+  "templateMinVersion": "15.0.0",
+  "lastUpdatedBy": "netadmin",
+  "editedTemplateDefinition": {
+    "config": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "ip access-list extended nat-dia-vpn-hop-access-list                                                                                                                                                                                       \n 10 deny   ip host 172.30.3.2 any                                                                                                                                                                                                           \n 20 deny   ip any host 172.30.3.2                                                                                                                                                                               \n 30 permit ip any any\n "
+    }
+  },
+  "gTemplateClass": "cedge",
+  "templateDefinition": {
+    "config": {
+      "vipObjectType": "object",
+      "vipType": "constant",
+      "vipValue": "ip access-list extended nat-dia-vpn-hop-access-list                                                                                                                                                                                       \n 10 deny   ip host 172.30.3.2 any                                                                                                                                                                                                           \n 20 deny   ip any host 172.30.3.2                                                                                                                                                                               \n 30 permit ip any any\n "
+    }
+  },
+  "attachedMastersCount": 0,
+  "configType": "xml",
+  "templateId": "87de8a8d-7401-47e7-b227-16840cd8e24d",
+  "createdOn": 1666728260008,
+  "@rid": 1598,
+  "feature": "vmanage-default",
+  "factoryDefault": false,
+  "createdBy": "netadmin",
+  "templateName": "Stage1_NONAT_ACL",
+  "devicesAttached": 0,
+  "templateDescription": "ACL to block NAT for neighbor router tunnels",
+  "lastUpdatedOn": 1666728260008
+}
